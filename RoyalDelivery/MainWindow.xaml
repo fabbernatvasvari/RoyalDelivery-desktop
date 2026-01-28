@@ -18,10 +18,16 @@
 
             <Button Content="Rendelés kezelése" Width="150" Height="30" Margin="0,0,0,10"/>
             <!-- DataGrid -->
-            <DataGrid AutoGenerateColumns="True" IsReadOnly="True" CanUserAddRows="False" Height="200" Margin="0,0,0,10">
-                <DataGrid.Items>
-                </DataGrid.Items>
+            <DataGrid ItemsSource="{Binding Orders}" 
+          SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" 
+          AutoGenerateColumns="False" 
+          IsReadOnly="True" 
+          Height="200" Margin="0,0,0,10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Rendelés" Binding="{Binding}" />
+                </DataGrid.Columns>
             </DataGrid>
+
 
             <!-- ListView -->
             <StackPanel Margin="0,0,0,10">

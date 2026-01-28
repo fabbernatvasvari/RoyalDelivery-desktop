@@ -19,6 +19,7 @@ namespace RoyalDelivery
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModels.MainWindowViewModel();
         }
     }
 }
