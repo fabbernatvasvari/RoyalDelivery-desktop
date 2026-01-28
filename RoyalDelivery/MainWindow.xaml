@@ -23,8 +23,14 @@
                     <ProgressBar Minimum="0" Maximum="100" Value="65" Height="20"/>
                 </StackPanel>
             </GroupBox>
-
-            <ScrollViewer />
+            <ScrollViewer Height="200" Width="400">
+                <StackPanel>
+                    <TextBlock Text="Görgethető adat 1"/>
+                    <TextBlock Text="Görgethető adat 2"/>
+                    <TextBlock Text="Görgethető adat 3"/>
+                    <TextBlock Text="Görgethető adat 4"/>
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </Window>
