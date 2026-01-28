@@ -1,24 +1,22 @@
 ﻿<Window x:Class="RoyalDelivery.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Royal Delivery – Admin" Height="800" Width="1200"
+        Title="Royal Delivery™ – Admin" Height="800" Width="1200"
         WindowStartupLocation="CenterScreen">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Stretch" >
 
-            <!-- Text elements -->
-            <TextBlock Text="Welcome to Royal Delivery Admin" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-            <TextBox Text="This is a TextBox" Margin="0,0,0,10"/>
-
-            <!-- Buttons -->
-            <Button Content="Click Me!" Width="150" Height="30" Margin="0,0,0,10"/>
+            <!-- Szöveges elemek -->
+            <TextBlock Text="Üdvözöljük a Royal Delivery™ admin felületén" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBox Text="Ez egy szövegdoboz" Margin="0,0,0,10"/>
 
             <!-- CheckBox & RadioButton -->
-            <CheckBox Content="Option 1" Margin="0,0,0,5"/>
-            <CheckBox Content="Option 2" Margin="0,0,0,10"/>
-            <RadioButton Content="Radio A" GroupName="Group1" Margin="0,0,0,5"/>
-            <RadioButton Content="Radio B" GroupName="Group1" Margin="0,0,0,10"/>
+            <CheckBox Content="Rendelés kész" Margin="0,0,0,5"/>
+            <CheckBox Content="Fizetés fogadva" Margin="0,0,0,10"/>
+            <RadioButton Content="Szállítás alatt" GroupName="StatusGroup" Margin="0,0,0,5"/>
+            <RadioButton Content="Kiszállítva" GroupName="StatusGroup" Margin="0,0,0,10"/>
 
+            <Button Content="Rendelés kezelése" Width="150" Height="30" Margin="0,0,0,10"/>
             <!-- DataGrid -->
             <DataGrid AutoGenerateColumns="True" IsReadOnly="True" CanUserAddRows="False" Height="200" Margin="0,0,0,10">
                 <DataGrid.Items>
@@ -26,21 +24,25 @@
             </DataGrid>
 
             <!-- ListView -->
-            <ListView Height="100" Margin="0,0,0,10">
-                <ListViewItem>Item 1</ListViewItem>
-                <ListViewItem>Item 2</ListViewItem>
-                <ListViewItem>Item 3</ListViewItem>
-            </ListView>
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Pizzák" FontSize="20" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ListView Height="100">
+                    <ListViewItem>Pizza Margherita</ListViewItem>
+                    <ListViewItem>Gyros tál</ListViewItem>
+                    <ListViewItem>Hamburger menü</ListViewItem>
+                </ListView>
+            </StackPanel>
+
 
             <!-- TreeView -->
             <TreeView Height="150" Margin="0,0,0,10">
                 <TreeViewItem Header="Futárok">
                     <TreeViewItem Header="János">
-                        <TreeViewItem Header="Rendelés #123"/>
-                        <TreeViewItem Header="Rendelés #124"/>
+                        <TreeViewItem Header="Rendelés #101"/>
+                        <TreeViewItem Header="Rendelés #104"/>
                     </TreeViewItem>
                     <TreeViewItem Header="Péter">
-                        <TreeViewItem Header="Rendelés #125"/>
+                        <TreeViewItem Header="Rendelés #102"/>
                     </TreeViewItem>
                 </TreeViewItem>
             </TreeView>
@@ -49,10 +51,10 @@
             <ProgressBar Minimum="0" Maximum="100" Value="70" Height="20" Margin="0,0,0,10"/>
 
             <!-- GroupBox -->
-            <GroupBox Header="Order Details" Margin="0,0,0,10">
+            <GroupBox Header="Rendelés részletei" Margin="0,0,0,10">
                 <StackPanel>
-                    <TextBlock Text="Order ID: 123" />
-                    <TextBox Text="Customer: John Doe" IsReadOnly="True" BorderThickness="0"/>
+                    <TextBlock Text="Rendelés azonosító: #101" />
+                    <TextBox Text="Vevő: Kovács Péter" IsReadOnly="True" BorderThickness="0"/>
                     <ProgressBar Minimum="0" Maximum="100" Value="45" Height="20"/>
                 </StackPanel>
             </GroupBox>
@@ -60,12 +62,12 @@
             <!-- ScrollViewer with more items -->
             <ScrollViewer Height="150" Width="500" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10">
                 <StackPanel>
-                    <TextBlock Text="Scrollable Item 1"/>
-                    <TextBlock Text="Scrollable Item 2"/>
-                    <TextBlock Text="Scrollable Item 3"/>
-                    <TextBlock Text="Scrollable Item 4"/>
-                    <TextBlock Text="Scrollable Item 5"/>
-                    <TextBlock Text="Scrollable Item 6"/>
+                    <TextBlock Text="Görgethető rendelés 1"/>
+                    <TextBlock Text="Görgethető rendelés 2"/>
+                    <TextBlock Text="Görgethető rendelés 3"/>
+                    <TextBlock Text="Görgethető rendelés 4"/>
+                    <TextBlock Text="Görgethető rendelés 5"/>
+                    <TextBlock Text="Görgethető rendelés 6"/>
                 </StackPanel>
             </ScrollViewer>
 
