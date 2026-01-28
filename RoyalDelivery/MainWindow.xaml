@@ -10,6 +10,21 @@
         <StackPanel>
             <TextBox Text="Összes rendelés: 1284" FontSize="20" FontWeight="Bold" />
             <TextBox Text="Budapest, Andrássy út 12." Background="LightGray" IsReadOnly="True" BorderThickness="0"/>
+            <DataGrid AutoGenerateColumns="True" IsReadOnly="True" CanUserAddRows="False" HeadersVisibility="Column" />
+            <ListView Height="200" Width="300"/>
+            <TreeView Width="250" />
+            <ProgressBar Minimum="0" Maximum="100" Value="65" Height="20"/>
+            <CheckBox Content="Kiszállítva"/>
+            <RadioButton Content="Aktív"/>
+            <GroupBox Header="Rendelés adatai">
+                <StackPanel>
+                    <TextBlock Text="Rendelés ID: 123"/>
+                    <TextBox Text="Budapest, Andrássy út 12." IsReadOnly="True" BorderThickness="0"/>
+                    <ProgressBar Minimum="0" Maximum="100" Value="65" Height="20"/>
+                </StackPanel>
+            </GroupBox>
+
+            <ScrollViewer />
         </StackPanel>
     </Grid>
 </Window>
