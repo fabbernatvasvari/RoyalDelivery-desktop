@@ -3,8 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Royal Delivery™ – Admin" Height="800" Width="1200"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
+            <view:ControlPanelView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:SchoolClassViewModel}">
+            <view:OrdersView />
+        </DataTemplate>
+    </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Stretch" >
+            <DockPanel>
+                <Menu>
+                    <MenuItem Header="Főmenüpont">
+                        <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanelViewCommand}"></MenuItem>
+                        <MenuItem Header="Felhasználók"></MenuItem>
+                        <MenuItem Header="Rendelések" Command="{Binding ShowOrderViewCommand}"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <ContentControl Content="{Binding CurrentView}" />
 
             <!-- Szöveges elemek -->
             <TextBlock Text="Üdvözöljük a Royal Delivery™ admin felületén" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
@@ -32,6 +53,7 @@
             </DataGrid>
             <TextBox Text="{Binding SelectedOrder, Mode=TwoWay}" 
          IsReadOnly="True" Margin="0,0,0,10"/>
+            <ListView ItemsSource="{Binding MenuItems}" Height="100" Margin="0,0,0,10"/>
 
 
             <!-- ListView -->

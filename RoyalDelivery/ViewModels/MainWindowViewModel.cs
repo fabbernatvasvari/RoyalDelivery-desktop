@@ -18,6 +18,15 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private string selectedOrder;
 
+        [ObservableProperty]
+        private ObservableCollection<string> menuItems = new ObservableCollection<string>()
+        {
+            "Pizza Margherita",
+            "Gyros tál",
+            "Hamburger menü"
+        };
+
+
         // Example: button command
         [RelayCommand]
         private void AddOrder()
