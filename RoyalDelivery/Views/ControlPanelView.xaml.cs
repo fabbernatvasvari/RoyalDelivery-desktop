@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyApp.Desktop.Views
+namespace RoyalDelivery.Views
 {
     /// <summary>
     /// Interaction logic for ControlPanelView.xaml

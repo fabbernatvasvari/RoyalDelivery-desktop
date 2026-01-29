@@ -1,9 +1,9 @@
-﻿namespace MyApp.Desktop.Models
+﻿namespace RoyalDelivery.Models
 {
     /// <summary>
     /// Iskolai osztály.
     /// </summary>
-    public class SchoolClass
+    public class Order
     {
         /// <summary>
         /// Az osztály évfolyama (pl. 9, 10, 11, 12).
@@ -23,12 +23,12 @@
         public int StudentCount { get; set; }
         
         // Üres konstruktor
-        public SchoolClass()
+        public Order()
         {
         }
 
         // Paraméteres konstruktor
-        public SchoolClass(int grade, string section, int studentCount)
+        public Order(int grade, string section, int studentCount)
         {
             Grade = grade;
             Section = section;

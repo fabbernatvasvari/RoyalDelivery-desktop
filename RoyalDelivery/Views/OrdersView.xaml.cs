@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyApp.Desktop.Views
+namespace RoyalDelivery.Views
 {
     /// <summary>
-    /// Interaction logic for SchoolClassView.xaml
+    /// Interaction logic for OrderView.xaml
     /// </summary>
-    public partial class SchoolClassView : UserControl
+    public partial class OrderView : UserControl
     {
-        public SchoolClassView()
+        public OrderView()
         {
             InitializeComponent();
         }

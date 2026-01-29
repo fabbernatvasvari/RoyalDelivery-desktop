@@ -1,27 +1,27 @@
-﻿using MyApp.Desktop.Models;
+﻿using RoyalDelivery.Models;
 
-namespace MyApp.Desktop.Repos
+namespace RoyalDelivery.Repos
 {
     /// <summary>
     /// Repo az iskolai osztályok tárolására
     /// </summary>
-    public class SchoolClassRepo
+    public class OrderRepo
     {
         /// <summary>
         /// Memóriában tárolt iskolai osztályok (tesztadatok)
         /// </summary>
-        private List<SchoolClass> _items = new()
+        private List<Order> _items = new()
         {
-            new SchoolClass(9,"a", 26),
-            new SchoolClass(9,"b", 0),
-            new SchoolClass(9,"c", 24)
+            new Order(9,"a", 26),
+            new Order(9,"b", 0),
+            new Order(9,"c", 24)
         };
 
         /// <summary>
         /// Összes iskolai osztály csak olvasható listáját visszaadó metódus
         /// </summary>
         /// <returns></returns>
-        public IReadOnlyList<SchoolClass> GetAll()
+        public IReadOnlyList<Order> GetAll()
         {
             return _items.ToList();
         }

@@ -1,29 +1,29 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MyApp.Desktop.Models;
-using MyApp.Desktop.Repos;
+using RoyalDelivery.Models;
+using RoyalDelivery.Repos;
 using System.Collections.ObjectModel;
 
-namespace MyApp.Desktop.ViewModels
+namespace RoyalDelivery.ViewModels
 {
     /// <summary>
     /// MainViewModel a View-n megjelenendő adatokat és interakciókat kezeli
     /// </summary>
-    public partial class SchoolClassViewModel : ObservableObject
+    public partial class OrderViewModel : ObservableObject
     {
         /// <summary>
         /// A ViewModel-nek része a repo, így eléri a repóban lévő adatokat
         /// </summary>
-        private readonly SchoolClassRepo _repo = new SchoolClassRepo();
+        private readonly OrderRepo _repo = new OrderRepo();
 
         /// <summary>
         /// Hogy a View-n megjelenjenek az iskolai osztályok, a ViewModel biztosít egy property-t
         /// </summary>
-        public ObservableCollection<SchoolClass> Classes { get; }
+        public ObservableCollection<Order> Classes { get; }
 
-        public SchoolClassViewModel()
+        public OrderViewModel()
         {
             // Az iskolai osztályok a repóból kerülnek betöltésre
-            Classes = new ObservableCollection<SchoolClass>(_repo.GetAll());
+            Classes = new ObservableCollection<Order>(_repo.GetAll());
         }
     }
 }
