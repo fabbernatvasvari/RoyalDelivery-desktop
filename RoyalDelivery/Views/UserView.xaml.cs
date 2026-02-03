@@ -9,24 +9,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Controls;
 
 namespace RoyalDelivery.Views
 {
-    /// <summary>
-    /// Interaction logic for UserView.xaml
-    /// </summary>
-    public partial class UserView : Window // Ensure this matches the base class in all partial declarations
+    public partial class UserView : UserControl
     {
-        private bool _contentLoaded; // Add this field if not already present in the other partial class
-
         public UserView()
         {
             InitializeComponent();
         }
-
-        public UserView(bool contentLoaded)
-        {
-            _contentLoaded = contentLoaded;
-        }
     }
 }
+
