@@ -1,23 +1,25 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using RoyalDelivery.Views; // ha kell majd DataTemplate-ekhez
 using System.Windows.Controls;
 
 namespace RoyalDelivery.ViewModels
 {
-    public partial class MainWindowViewModel: ObservableObject
+    public partial class MainWindowViewModel : ObservableObject
     {
-        // Example: list of orders
+        // ---------- Current View ----------
+        [ObservableProperty]
+        private object currentView;
+
+        // ---------- Orders ----------
         [ObservableProperty]
         private ObservableCollection<string> orders;
 
-        // Example: selected order
         [ObservableProperty]
         private string selectedOrder;
 
+        // ---------- Menu Items ----------
         [ObservableProperty]
         private ObservableCollection<string> menuItems = new ObservableCollection<string>()
         {
@@ -26,16 +28,36 @@ namespace RoyalDelivery.ViewModels
             "Hamburger menü"
         };
 
-
-        // Example: button command
+        // ---------- Commands ----------
         [RelayCommand]
         private void AddOrder()
         {
             Orders.Add($"Rendelés #{Orders.Count + 1}");
         }
 
+        // ---------- Navigation Commands ----------
+        [RelayCommand]
+        private void ShowUserView()
+        {
+            CurrentView = new UserViewModel();
+        }
+
+        [RelayCommand]
+        private void ShowOrderView()
+        {
+            CurrentView = new OrderViewModel(); // feltételezzük, hogy létezik
+        }
+
+        [RelayCommand]
+        private void ShowControlPanelView()
+        {
+            CurrentView = new ControlPanelViewModel(); // feltételezzük, hogy létezik
+        }
+
+        // ---------- Constructor ----------
         public MainWindowViewModel()
         {
+            // Orders inicializálása
             Orders = new ObservableCollection<string>()
             {
                 "Rendelés #101",
@@ -43,6 +65,9 @@ namespace RoyalDelivery.ViewModels
                 "Rendelés #103"
             };
             SelectedOrder = Orders[0];
+
+            // Alapértelmezett nézet: üres (csak menü látszik)
+            CurrentView = null;
         }
     }
 }

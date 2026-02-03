@@ -18,7 +18,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Osztály" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Létszám" DisplayMemberBinding="{Binding StudentCount}" />
+                    <GridViewColumn Header="Létszám" DisplayMemberBinding="{Binding OrderCount}" />
                 </GridView>
             </ListView.View>
             <ListView.Style>

@@ -20,7 +20,7 @@
         /// <summary>
         /// Az osztályban tanuló diákok száma.
         /// </summary>
-        public int StudentCount { get; set; }
+        public int OrderCount { get; set; }
         
         // Üres konstruktor
         public Order()
@@ -28,17 +28,17 @@
         }
 
         // Paraméteres konstruktor
-        public Order(int grade, string section, int studentCount)
+        public Order(int grade, string section, int OrderCount)
         {
             Grade = grade;
             Section = section;
-            StudentCount = studentCount;
+            OrderCount = OrderCount;
         }
 
         // Barátságos megjelenítés
         public override string ToString()
         { 
-            return $"{Grade}.{Section} – {StudentCount} fő";
+            return $"{Grade}.{Section} – {OrderCount} fő";
         }
     }
 }
