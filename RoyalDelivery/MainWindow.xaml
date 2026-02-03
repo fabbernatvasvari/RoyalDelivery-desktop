@@ -31,7 +31,8 @@
                 <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanelViewCommand}" />
                 <MenuItem Header="Felhasználók" />
                 <MenuItem Header="Rendelések" Command="{Binding ShowOrderViewCommand}" />
-            </MenuItem>
+                
+            </MenuItem> 
         </Menu>
 
         <!-- Scrollable content -->
