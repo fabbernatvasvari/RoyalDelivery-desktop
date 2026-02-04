@@ -1,6 +1,8 @@
-﻿namespace RoyalDelivery.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace RoyalDelivery.ViewModels
 {
-    public class ControlPanelViewModel
+    public partial class ControlPanelViewModel : ObservableObject
     {
         public string Title { get; } = "Vezérlőpult";
 

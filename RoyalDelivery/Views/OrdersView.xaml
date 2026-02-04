@@ -17,8 +17,8 @@
               SelectedItem="{Binding SelectedClass, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Osztály" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Létszám" DisplayMemberBinding="{Binding StudentCount}" />
+                    <GridViewColumn Header="Rendelés kategória" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Rendelések száma" DisplayMemberBinding="{Binding OrderCount}" />
                 </GridView>
             </ListView.View>
             <ListView.Style>
@@ -29,7 +29,7 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListView">
                                         <Grid>
-                                            <TextBlock Text="Nincs megjeleníthető osztály."
+                                            <TextBlock Text="Nincs megjeleníthető 🥀🥀🥀🥀."
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
                                            Opacity="0.6"/>
