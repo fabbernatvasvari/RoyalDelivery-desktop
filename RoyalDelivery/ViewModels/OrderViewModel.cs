@@ -1,7 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
 using RoyalDelivery.Repos;
 using System.Collections.ObjectModel;
+using System.DirectoryServices;
+using System.Windows.Input;
 
 namespace RoyalDelivery.ViewModels
 {
@@ -25,5 +28,13 @@ namespace RoyalDelivery.ViewModels
             // Az iskolai osztályok a repóból kerülnek betöltésre
             Classes = new ObservableCollection<Order>(_repo.GetAll());
         }
+
+        private RelayCommand deleteSelectedCommand;
+        public ICommand DeleteSelectedCommand => deleteSelectedCommand ??= new RelayCommand(DeleteSelected);
+
+        private void DeleteSelected()
+        {
+        }
+
     }
 }
