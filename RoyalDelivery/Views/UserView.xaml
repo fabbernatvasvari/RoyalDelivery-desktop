@@ -13,8 +13,7 @@
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
                 <DataGridTextColumn Header="Jelszó" Binding="{Binding Password}" />
                 <DataGridTextColumn Header="Bankkártya szám" Binding="{Binding CardNumber}" />
-                <DataGridTextColumn Header="Lejárati dátum" Binding="{Binding Expiry}" />
-                <DataGridTextColumn Header="CCV/CVV" Binding="{Binding CCV}" />
+                <DataGridTextColumn Header="Számlázási cím" Binding="{Binding BillingAddress}" />
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

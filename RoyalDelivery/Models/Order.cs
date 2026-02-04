@@ -1,17 +1,17 @@
 ﻿namespace RoyalDelivery.Models
 {
     /// <summary>
-    /// Iskolai osztály.
+    /// Rendelés.
     /// </summary>
     public class Order
     {
         /// <summary>
-        /// Az osztály évfolyama (pl. 9, 10, 11, 12).
+        /// A rendelés sürgőssége (pl. 9, 10, 11, 12).
         /// </summary>
         public int Grade { get; set; }
 
         /// <summary>
-        /// Az osztály betűjele (pl. "a", "b", "c").
+        /// A termékek minőség- és szállítási kategóriája (pl. A, B, C).
         /// </summary>
         public string Section { get; set; } = string.Empty;
 
