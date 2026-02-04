@@ -48,7 +48,6 @@
             <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Stretch" >
                 <DockPanel>
                 </DockPanel>
-                <ContentControl Content="{Binding CurrentView}" />
 
                 <!-- Szöveges elemek -->
                 <TextBlock Text="Üdvözöljük a Royal Delivery™ admin felületén" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>

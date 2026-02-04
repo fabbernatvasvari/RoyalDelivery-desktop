@@ -28,11 +28,11 @@
         }
 
         // Paraméteres konstruktor
-        public Order(int grade, string section, int OrderCount)
+        public Order(int grade, string section, int orderCount)
         {
             Grade = grade;
             Section = section;
-            OrderCount = OrderCount;
+            OrderCount = orderCount;
         }
 
         // Barátságos megjelenítés

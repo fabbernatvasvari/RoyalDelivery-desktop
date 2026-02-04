@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using RoyalDelivery.Views; // ha kell majd DataTemplate-ekhez
-using System.Windows.Controls;
 
 namespace RoyalDelivery.ViewModels
 {
