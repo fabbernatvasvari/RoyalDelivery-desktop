@@ -13,8 +13,8 @@
     </UserControl.DataContext>
     <StackPanel Margin="10">
         <Label>Osztályok</Label>
-        <ListView ItemsSource="{Binding Classes}"
-              SelectedItem="{Binding SelectedClass, Mode=TwoWay}">
+        <ListView ItemsSource="{Binding Orders}"
+              SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Rendelés kategória" DisplayMemberBinding="{Binding Name}" />

@@ -28,7 +28,7 @@ namespace RoyalDelivery.Repos
 
         internal void Remove(Order selectedOrder)
         {
-            Console.WriteLine("internal void Remove(Order selectedOrder) meghívva.");
+            Console.WriteLine("internal void Remove(Order SelectedOrder) meghívva.");
             if (selectedOrder == null)
                 return;
 
