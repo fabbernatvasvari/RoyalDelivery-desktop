@@ -17,8 +17,8 @@
               SelectedItem="{Binding SelectedClass, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Osztály" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Létszám" DisplayMemberBinding="{Binding OrderCount}" />
+                    <GridViewColumn Header="Rendelés kategória" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Rendelések száma" DisplayMemberBinding="{Binding OrderCount}" />
                 </GridView>
             </ListView.View>
             <ListView.Style>

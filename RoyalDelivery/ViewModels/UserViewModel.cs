@@ -6,7 +6,7 @@ namespace RoyalDelivery.ViewModels
 
     public partial class UserViewModel : ObservableObject
     {
-        public ObservableCollection<User> Users { get; set; }
+        public ObservableCollection<User> Users { get; }
 
         public UserViewModel()
         {

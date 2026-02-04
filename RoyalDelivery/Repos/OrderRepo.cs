@@ -18,10 +18,10 @@ namespace RoyalDelivery.Repos
         };
 
         /// <summary>
-        /// Összes iskolai osztály csak olvasható listáját visszaadó metódus
+        /// Összes rendelés írható és olvasható listáját visszaadó metódus
         /// </summary>
         /// <returns></returns>
-        public IReadOnlyList<Order> GetAll()
+        public List<Order> GetAll()
         {
             return _items.ToList();
         }
