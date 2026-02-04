@@ -12,9 +12,9 @@ namespace RoyalDelivery.Repos
         /// </summary>
         private List<Order> _items = new()
         {
-            new Order(9,"a", 26),
-            new Order(9,"b", 0),
-            new Order(9,"c", 24)
+            new Order(1,"A", 6),
+            new Order(2,"B", 1),
+            new Order(3,"C", 24)
         };
 
         /// <summary>
@@ -24,6 +24,15 @@ namespace RoyalDelivery.Repos
         public List<Order> GetAll()
         {
             return _items.ToList();
+        }
+
+        internal void Remove(Order selectedOrder)
+        {
+            Console.WriteLine("internal void Remove(Order selectedOrder) meghívva.");
+            if (selectedOrder == null)
+                return;
+
+            _items.Remove(selectedOrder);
         }
     }
 }

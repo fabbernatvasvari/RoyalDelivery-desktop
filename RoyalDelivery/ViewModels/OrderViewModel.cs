@@ -17,7 +17,7 @@ namespace RoyalDelivery.ViewModels
         /// A ViewModel-nek része a repo, így eléri a repóban lévő adatokat
         /// </summary>
         private readonly OrderRepo _repo = new OrderRepo();
-
+        private Order selectedOrder;
         /// <summary>
         /// Hogy a View-n megjelenjenek az iskolai osztályok, a ViewModel biztosít egy property-t
         /// </summary>
@@ -34,6 +34,11 @@ namespace RoyalDelivery.ViewModels
 
         private void DeleteSelected()
         {
+            if (selectedOrder is null) return;
+
+            _repo.Remove(selectedOrder);
+            Classes.Remove(selectedOrder);
+            selectedOrder = null;
         }
 
     }
