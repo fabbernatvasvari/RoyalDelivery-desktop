@@ -19,14 +19,14 @@ namespace RoyalDelivery.Repos
         /// Összes rendelés írható és olvasható listáját visszaadó metódus
         /// </summary>
         /// <returns></returns>
-        public List<Order> GetAll()
+        public IEnumerable<Order> GetAll()
         {
             return _items.ToList();
         }
 
-        internal void Remove(Id selectedId) // TODO Id selectedId
+        public void Remove(Id selectedId)
         {
-            Console.WriteLine("internal void Remove(Meal SelectedOrder) meghívva.");
+            Console.WriteLine("public void Remove(Meal SelectedOrder) meghívva.");
             if (selectedId == null)
                 return;
 

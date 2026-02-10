@@ -2,6 +2,11 @@
 {
     public class Id
     {
-        public int Value { get; }
+        public Id(int value)
+        {
+            Value = value;
+        }
+
+        public int Value { get; set; }
     }
 }

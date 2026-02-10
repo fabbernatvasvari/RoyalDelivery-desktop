@@ -14,18 +14,18 @@ namespace RoyalDelivery.ViewModels
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
         private Meal? selectedOrder;
 
-        public ObservableCollection<Meal> Orders { get; }
+        public ObservableCollection<Order> Orders { get; }
 
         public OrderViewModel()
         {
-            Orders = new ObservableCollection<Meal>(_repo.GetAll());
+            Orders = new ObservableCollection<Order>(_repo.GetAll());
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
         {
-            _repo.Remove(SelectedOrder);
-            Orders.Remove(SelectedOrder);
+            _repo.Remove(SelectedOrder.Id);
+            Orders.RemoveAt(SelectedOrder.Id.Value);
             SelectedOrder = null;
         }
 

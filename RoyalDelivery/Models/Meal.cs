@@ -5,12 +5,12 @@
     /// </summary>
     public class Meal
     {
-        private int _id;
+        private Id _id;
         private string _name = string.Empty;
         private double _price;
-        private static int _nextId = 1;
+        public static Id NextId = new Id(1);
 
-        public int Id
+        public Id Id
         {
             get => _id;
             private set => _id = value;
@@ -26,9 +26,9 @@
             set => _price = value;
         }
 
-        public Meal(string name, double price)
+        public Meal(string name, double price, Id _nextId)
         {
-            Id = _nextId++;
+            Id = new Id(_nextId.Value++);
             Name = name;
             Price = price;
         }

@@ -43,13 +43,13 @@ namespace RoyalDelivery.ViewModels
         [RelayCommand]
         private void ShowOrderView()
         {
-            CurrentView = new OrderViewModel(); // feltételezzük, hogy létezik
+            CurrentView = new OrderViewModel();
         }
 
         [RelayCommand]
         private void ShowControlPanelView()
         {
-            CurrentView = new ControlPanelViewModel(); // feltételezzük, hogy létezik
+            CurrentView = new ControlPanelViewModel();
         }
 
         // ---------- Constructor ----------
