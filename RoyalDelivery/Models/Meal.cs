@@ -1,7 +1,7 @@
 ﻿namespace RoyalDelivery.Models
 {
     /// <summary>
-    /// Rendelés.
+    /// Étel.
     /// </summary>
     public class Meal
     {

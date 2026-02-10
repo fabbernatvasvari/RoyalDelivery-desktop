@@ -1,1 +1,1 @@
-A Vasváris vizsgaremekhez desktop admin felület
+A Vasvári Techikum évvégi vizsgaremekéhez desktop admin felület, rendszergazdák és nyilvántartók számára

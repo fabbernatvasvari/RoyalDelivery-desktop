@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RoyalDelivery.Models
 {
+    /// <summary>
+    /// Felhasználó.
+    /// </summary>
     public class User
     {
         public string? Name { get; set; }

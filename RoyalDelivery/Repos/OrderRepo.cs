@@ -10,29 +10,27 @@ namespace RoyalDelivery.Repos
         /// <summary>
         /// Memóriában tárolt iskolai osztályok (tesztadatok)
         /// </summary>
-        private List<Meal> _items = new()
+        private List<Order> _items = new()
         {
-            new Order(1,"A", 6),
-            new Order(2,"B", 1),
-            new Order(3,"C", 24)
+            
         };
 
         /// <summary>
         /// Összes rendelés írható és olvasható listáját visszaadó metódus
         /// </summary>
         /// <returns></returns>
-        public List<Meal> GetAll()
+        public List<Order> GetAll()
         {
             return _items.ToList();
         }
 
-        internal void Remove(Meal selectedOrder) // TODO Id selectedId
+        internal void Remove(Id selectedId) // TODO Id selectedId
         {
             Console.WriteLine("internal void Remove(Meal SelectedOrder) meghívva.");
-            if (selectedOrder == null)
+            if (selectedId == null)
                 return;
 
-            _items.Remove(selectedOrder);
+            _items.RemoveAt(selectedId.Value);
         }
     }
 }

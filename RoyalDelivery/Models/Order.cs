@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RoyalDelivery.Models
 {
+    /// <summary>
+    /// Rendelés.
+    /// </summary>
     public class Order
     {
         private int _id;
