@@ -9,7 +9,7 @@ namespace RoyalDelivery.Repos
     {
         private List<Restaurant> _items = new()
         {
-
+            new Restaurant()
         };
 
         public List<Restaurant> GetAll()

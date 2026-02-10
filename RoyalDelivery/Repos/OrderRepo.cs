@@ -10,12 +10,12 @@ namespace RoyalDelivery.Repos
         /// <summary>
         /// Memóriában tárolt iskolai osztályok (tesztadatok)
         /// </summary>
-        private List<Order> _items = new();
         private List<Order> _items = new()
-        {
-            
-            
-        };
+    {
+        new Order { Id = new Id(0), Name = "Pizza rendelés", OrderCount = 3 },
+        new Order { Id = new Id(1), Name = "Gyros rendelés", OrderCount = 5 },
+        new Order { Id = new Id(2), Name = "Hamburger rendelés", OrderCount = 2 },
+    };
 
         /// <summary>
         /// Összes rendelés írható és olvasható listáját visszaadó metódus
