@@ -35,6 +35,11 @@ namespace RoyalDelivery.Models
             _meals = meals ?? throw new ArgumentNullException(nameof(meals));
             _customerName = customerName ?? throw new ArgumentNullException(nameof(customerName));
         }
+
+        public Order()
+        {
+        }
+
         public override string ToString() {
             return $"A rendelés adatai: Id={Id}, Meals={string.Join(", ", Meals)}, CustomerName={CustomerName}";
         }

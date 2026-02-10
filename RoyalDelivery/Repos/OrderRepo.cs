@@ -10,7 +10,7 @@ namespace RoyalDelivery.Repos
         /// <summary>
         /// Memóriában tárolt iskolai osztályok (tesztadatok)
         /// </summary>
-        private List<Order> _items = new()
+        private List<Order> _items = new();
         private List<Order> _items = new()
         {
             

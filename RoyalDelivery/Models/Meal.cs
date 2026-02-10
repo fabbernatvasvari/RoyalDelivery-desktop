@@ -26,11 +26,17 @@
             set => _price = value;
         }
 
+
+
         public Meal(string name, double price, Id _nextId)
         {
             Id = new Id(_nextId.Value++);
             Name = name;
             Price = price;
+        }
+
+        public Meal()
+        {
         }
 
         public override string ToString()
