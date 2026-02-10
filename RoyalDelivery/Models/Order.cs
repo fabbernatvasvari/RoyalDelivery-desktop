@@ -1,44 +1,39 @@
-﻿namespace RoyalDelivery.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace RoyalDelivery.Models
 {
-    /// <summary>
-    /// Rendelés.
-    /// </summary>
     public class Order
     {
-        /// <summary>
-        /// A rendelés sürgőssége (pl. 9, 10, 11, 12).
-        /// </summary>
-        public int Grade { get; set; }
-
-        /// <summary>
-        /// A termékek minőség- és szállítási kategóriája (pl. A, B, C).
-        /// </summary>
-        public string Section { get; set; } = string.Empty;
-
-        public string Name => $"{Grade}.{Section}";
-
-        /// <summary>
-        /// Az osztályban tanuló diákok száma.
-        /// </summary>
-        public int OrderCount { get; set; }
-        
-        // Üres konstruktor
-        public Order()
+        private int _id;
+        private List<Meal> _meals;
+        private string _customerName;
+        private static int _nextId = 1;
+        public int Id
         {
+            get => _id;
+            private set => _id = value;
         }
-
-        // Paraméteres konstruktor
-        public Order(int grade, string section, int orderCount)
+        public List<Meal> Meals
         {
-            Grade = grade;
-            Section = section;
-            OrderCount = orderCount;
+            get => _meals;
+            set => _meals = value;
         }
-
-        // Barátságos megjelenítés
-        public override string ToString()
-        { 
-            return $"{Grade}.{Section} – {OrderCount} fő";
+        public string CustomerName
+        {
+            get => _customerName;
+            set => _customerName = value;
+        }
+       
+        public Order(List<Meal> meals, string customerName)
+        {
+            Id = _nextId++;
+            _meals = meals ?? throw new ArgumentNullException(nameof(meals));
+            _customerName = customerName ?? throw new ArgumentNullException(nameof(customerName));
+        }
+        public override string ToString() {
+            return $"A rendelés adatai: Id={Id}, Meals={string.Join(", ", Meals)}, CustomerName={CustomerName}";
         }
     }
 }
