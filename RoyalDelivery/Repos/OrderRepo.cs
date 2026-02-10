@@ -11,7 +11,9 @@ namespace RoyalDelivery.Repos
         /// Memóriában tárolt iskolai osztályok (tesztadatok)
         /// </summary>
         private List<Order> _items = new()
+        private List<Order> _items = new()
         {
+            
             
         };
 
@@ -30,6 +32,7 @@ namespace RoyalDelivery.Repos
             if (selectedId == null)
                 return;
 
+            _items.RemoveAt(selectedId.Value);
             _items.RemoveAt(selectedId.Value);
         }
     }
