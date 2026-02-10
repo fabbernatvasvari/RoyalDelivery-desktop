@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RoyalDelivery.Models
 {
+    /// <summary>
+    /// Étterem.
+    /// </summary>
     internal class Restaurant
     {
         public int Id { get; set; }
