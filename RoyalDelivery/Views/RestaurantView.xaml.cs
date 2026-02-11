@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,11 +14,11 @@ using System.Windows.Shapes;
 namespace RoyalDelivery.Views
 {
     /// <summary>
-    /// Interaction logic for ControlPanelView.xaml
+    /// Interaction logic for RestaurantView.xaml
     /// </summary>
-    public partial class ControlPanelView : UserControl
+    public partial class RestaurantView : UserControl
     {
-        public ControlPanelView()
+        public RestaurantView()
         {
             InitializeComponent();
         }

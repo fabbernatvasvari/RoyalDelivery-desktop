@@ -16,8 +16,12 @@
         <viewmodel:MainWindowViewModel />
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodel:ControlPanelViewModel}">
-            <view:ControlPanelView />
+        <DataTemplate DataType="{x:Type viewmodel:RestaurantViewModel}">
+            <view:RestaurantView />
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewmodel:MealsViewModel}">
+            <view:MealView />
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewmodel:OrderViewModel}">
@@ -30,17 +34,18 @@
     </Window.Resources>
 
     <DockPanel>
-        
+
         <!-- Top menu -->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Főmenüpont">
-                <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanelViewCommand}" />
-                <MenuItem Header="Felhasználók" Command="{Binding ShowUserViewCommand}" />
+                <MenuItem Header="Éttermek" Command="{Binding ShowRestaurantsViewCommand}" />
+                <MenuItem Header="Ételek" Command="{Binding ShowMealsViewCommand}" />
                 <MenuItem Header="Rendelések" Command="{Binding ShowOrderViewCommand}" />
+                <MenuItem Header="Felhasználók" Command="{Binding ShowUserViewCommand}" />
             </MenuItem>
         </Menu>
 
         <ContentControl Content="{Binding CurrentView}" />
-        
+
     </DockPanel>
 </Window>

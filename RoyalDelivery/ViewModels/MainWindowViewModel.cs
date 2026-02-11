@@ -49,7 +49,7 @@ namespace RoyalDelivery.ViewModels
         [RelayCommand]
         private void ShowControlPanelView()
         {
-            CurrentView = new ControlPanelViewModel();
+            CurrentView = new RestaurantViewModel();
         }
 
         // ---------- Constructor ----------
@@ -67,5 +67,7 @@ namespace RoyalDelivery.ViewModels
             // Alapértelmezett nézet: üres (csak menü látszik)
             CurrentView = null;
         }
+
+
     }
 }

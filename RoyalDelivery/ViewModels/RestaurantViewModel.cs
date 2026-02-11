@@ -2,7 +2,7 @@
 
 namespace RoyalDelivery.ViewModels
 {
-    public partial class ControlPanelViewModel : ObservableObject
+    public partial class RestaurantViewModel : ObservableObject
     {
         public string Title { get; } = "Vezérlőpult";
 
