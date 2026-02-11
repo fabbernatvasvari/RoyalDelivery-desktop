@@ -8,14 +8,14 @@ using System.Text;
 
 namespace RoyalDelivery.ViewModels
 {
-    public partial class MealsViewModel : ObservableObject
+    public partial class MealViewModel : ObservableObject
     {
         private readonly MealRepo _repo = new();
 
         [ObservableProperty]
         private ObservableCollection<Meal> meals;
 
-        public MealsViewModel()
+        public MealViewModel()
         {
             Meals = new ObservableCollection<Meal>(_repo.GetAll());
         }

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace RoyalDelivery.ViewModels
 {
@@ -67,6 +68,11 @@ namespace RoyalDelivery.ViewModels
             // Alapértelmezett nézet: üres (csak menü látszik)
             CurrentView = null;
         }
+
+        public ICommand ShowMealsViewCommand => new RelayCommand(() =>
+        {
+            CurrentView = new MealViewModel();
+        });
 
 
     }
