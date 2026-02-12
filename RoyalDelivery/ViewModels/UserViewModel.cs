@@ -13,7 +13,6 @@ namespace RoyalDelivery.ViewModels
 
         public UserViewModel()
         {
-            // dummy data
             Users = new ObservableCollection<User>(_repo.GetAll());
         }
     }

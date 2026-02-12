@@ -12,12 +12,12 @@ namespace RoyalDelivery.Repos
         /// </summary>
         private List<Order> _items = new()
         {
-            new Order { Name = "Pizza", Meals = new List<Meal>(),
+            new Order { Name = "Pizza", Meals = new List<Meal>(), },
             new Order { Name = "Gyros", Meals = new List<Meal>(), },
             new Order { Name = "Hamburger", Meals = new List<Meal>(), },
             new Order { Name = "Sült csirke", Meals = new List<Meal>(), },
             new Order { Name = "Sült krumpli", Meals = new List<Meal>(), },
-            new Order { Name = "Kóla", Meals = new List<Meal>(), },
+            new Order { Name = "Kóla", Meals = new List<Meal>(), }
         };
 
         /// <summary>

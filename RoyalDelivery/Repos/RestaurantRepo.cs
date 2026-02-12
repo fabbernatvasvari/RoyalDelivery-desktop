@@ -9,7 +9,57 @@ namespace RoyalDelivery.Repos
     {
         private List<Restaurant> _items = new()
         {
-            new Restaurant()
+            new Restaurant
+            {
+                Id = 0,
+                Name = "Royal Diner",
+                Address = "123 Crown St.",
+                Menu = new List<Meal>
+                {
+                    new Meal("Pizza Margherita", 1500),
+            new Meal("Gyros tál", 2000),
+            new Meal("Hamburger", 1800),
+            new Meal("Sült csirke", 2200),
+            new Meal("Rántott sajt", 1700),
+            new Meal("Lazac steak", 3000),
+            new Meal("Vegetáriánus lasagne", 2500),
+            new Meal("Sült zöldségek", 1200)
+                }
+            },
+            new Restaurant
+            {
+                Id = 1,
+                Name = "Palace Pizzeria",
+                Address = "45 Marble Ave.",
+                Menu = new List<Meal>
+                {
+                    new Meal("Pizza Margherita", 1500),
+            new Meal("Gyros tál", 2000),
+            new Meal("Hamburger", 1800),
+            new Meal("Sült csirke", 2200),
+            new Meal("Rántott sajt", 1700),
+            new Meal("Lazac steak", 3000),
+            new Meal("Vegetáriánus lasagne", 2500),
+            new Meal("Sült zöldségek", 1200)
+                }
+            },
+            new Restaurant
+            {
+                Id = 2,
+                Name = "Sovereign Sushi",
+                Address = "9 Ocean Blvd.",
+                Menu = new List<Meal>
+                {
+                    new Meal("Pizza Margherita", 1500),
+            new Meal("Gyros tál", 2000),
+            new Meal("Hamburger", 1800),
+            new Meal("Sült csirke", 2200),
+            new Meal("Rántott sajt", 1700),
+            new Meal("Lazac steak", 3000),
+            new Meal("Vegetáriánus lasagne", 2500),
+            new Meal("Sült zöldségek", 1200)
+                }
+            }
         };
 
         public List<Restaurant> GetAll()

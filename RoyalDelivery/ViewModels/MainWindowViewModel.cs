@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using RoyalDelivery.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -13,25 +14,28 @@ namespace RoyalDelivery.ViewModels
 
         // ---------- Orders ----------
         [ObservableProperty]
-        private ObservableCollection<string> orders;
+        private ObservableCollection<Order> orders;
 
         [ObservableProperty]
-        private string selectedOrder;
+        private Order selectedOrder;
 
         // ---------- Menu Items ----------
         [ObservableProperty]
-        private ObservableCollection<string> menuItems = new ObservableCollection<string>()
+        private ObservableCollection<Order> menuItems = new ObservableCollection<Order>()
         {
-            "Pizza Margherita",
-            "Gyros tál",
-            "Hamburger menü"
+             new Order { Name = "Pizza", Meals = new List<Meal>(), },
+            new Order { Name = "Gyros", Meals = new List<Meal>(), },
+            new Order { Name = "Hamburger", Meals = new List<Meal>(), },
+            new Order { Name = "Sült csirke", Meals = new List<Meal>(), },
+            new Order { Name = "Sült krumpli", Meals = new List<Meal>(), },
+            new Order { Name = "Kóla", Meals = new List<Meal>(), }
         };
 
         // ---------- Commands ----------
         [RelayCommand]
         private void AddOrder()
         {
-            Orders.Add($"Rendelés #{Orders.Count + 1}");
+            Orders.Add(new Order { Name = $"Rendelés #{Orders.Count + 1}", Meals = new List<Meal>(), });
         }
 
         // ---------- Navigation Commands ----------
@@ -57,11 +61,14 @@ namespace RoyalDelivery.ViewModels
         public MainWindowViewModel()
         {
             // Orders inicializálása
-            Orders = new ObservableCollection<string>()
+            Orders = new ObservableCollection<Order>()
             {
-                "Rendelés #101",
-                "Rendelés #102",
-                "Rendelés #103"
+                new Order { Name = "Pizza", Meals = new List<Meal>(), },
+            new Order { Name = "Gyros", Meals = new List<Meal>(), },
+            new Order { Name = "Hamburger", Meals = new List<Meal>(), },
+            new Order { Name = "Sült csirke", Meals = new List<Meal>(), },
+            new Order { Name = "Sült krumpli", Meals = new List<Meal>(), },
+            new Order { Name = "Kóla", Meals = new List<Meal>(), }
             };
             SelectedOrder = Orders[0];
 

@@ -28,9 +28,9 @@
 
 
 
-        public Meal(string name, double price, Id _nextId)
+        public Meal(string name, double price)
         {
-            Id = new Id(_nextId.Value++);
+            Id = new Id(NextId.Value++);
             Name = name;
             Price = price;
         }

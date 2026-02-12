@@ -9,14 +9,14 @@ namespace RoyalDelivery.Repos
     {
         private List<Meal> _items = new()
         {
-            new Meal("Pizza Margherita", 1500, Meal.NextId),
-            new Meal("Gyros tál", 2000, Meal.NextId),
-            new Meal("Hamburger", 1800, Meal.NextId),
-            new Meal("Sült csirke", 2200, Meal.NextId),
-            new Meal("Rántott sajt", 1700, Meal.NextId),
-            new Meal("Lazac steak", 3000, Meal.NextId),
-            new Meal("Vegetáriánus lasagne", 2500, Meal.NextId),
-            new Meal("Sült zöldségek", 1200, Meal.NextId)
+            new Meal("Pizza Margherita", 1500),
+            new Meal("Gyros tál", 2000),
+            new Meal("Hamburger", 1800),
+            new Meal("Sült csirke", 2200),
+            new Meal("Rántott sajt", 1700),
+            new Meal("Lazac steak", 3000),
+            new Meal("Vegetáriánus lasagne", 2500),
+            new Meal("Sült zöldségek", 1200)
         };
 
         public List<Meal> GetAll()

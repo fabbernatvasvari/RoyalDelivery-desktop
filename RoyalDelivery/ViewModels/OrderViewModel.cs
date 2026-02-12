@@ -12,7 +12,7 @@ namespace RoyalDelivery.ViewModels
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private Meal? selectedOrder;
+        private Order? selectedOrder;
 
         public ObservableCollection<Order> Orders { get; }
 
@@ -27,7 +27,7 @@ namespace RoyalDelivery.ViewModels
         private void DeleteSelected()
         {
             _repo.Remove(SelectedOrder.Id);
-            Orders.RemoveAt(SelectedOrder.Id.Value);
+            Orders.Remove(SelectedOrder);
             SelectedOrder = null;
         }
 

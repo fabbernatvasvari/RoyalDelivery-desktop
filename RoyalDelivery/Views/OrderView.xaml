@@ -12,7 +12,8 @@
         <viewmodel:OrderViewModel />
     </UserControl.DataContext>
     <StackPanel Margin="10">
-        <Label>Osztályok</Label>
+        <TextBlock Text="Rendelések listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
         <ListView ItemsSource="{Binding Orders}"
               SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
             <ListView.View>
