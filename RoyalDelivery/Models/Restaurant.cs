@@ -12,13 +12,11 @@ namespace RoyalDelivery.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public List<Meal> Menu { get; set; }
 
-        public Restaurant(string name, string address, List<Meal> menu)
+        public Restaurant(string name, string address)
         {
             Name = name;
             Address = address;
-            Menu = menu;
         }
 
         public Restaurant()
@@ -26,7 +24,7 @@ namespace RoyalDelivery.Models
         }
 
         public override string ToString() {
-            return $"Az étterem adatai: Id={Id}, Username={Name}, Address={Address}, Menu={string.Join(", ", Menu)}";
+            return $"Az étterem adatai: Id={Id}, Username={Name}, Address={Address}";
         }
     }
 }
