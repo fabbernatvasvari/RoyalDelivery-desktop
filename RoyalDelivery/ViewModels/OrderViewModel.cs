@@ -18,8 +18,18 @@ namespace RoyalDelivery.ViewModels
 
         public OrderViewModel()
         {
-            Orders = new ObservableCollection<Order>(_repo.GetAll());
+            // dummy data
+            Orders = new ObservableCollection<Order>()
+            {
+                new Order { CustomerName = "Pizza", Meals = new List<Meal>(), /* Id and OrderCount cannot be set here */ },
+                new Order { CustomerName = "Gyros", Meals = new List<Meal>(), },
+                new Order { CustomerName = "Hamburger", Meals = new List<Meal>(), },
+                new Order { CustomerName = "Sült csirke", Meals = new List<Meal>(), },
+                new Order { CustomerName = "Sült krumpli", Meals = new List<Meal>(), },
+                new Order { CustomerName = "Kóla", Meals = new List<Meal>(), },
+            };
         }
+
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
@@ -33,5 +43,7 @@ namespace RoyalDelivery.ViewModels
         {
             return SelectedOrder != null;
         }
+
+        public ObservableCollection<User> Users { get; }
     }
 }
