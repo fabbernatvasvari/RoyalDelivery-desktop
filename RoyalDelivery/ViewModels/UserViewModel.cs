@@ -15,6 +15,20 @@ namespace RoyalDelivery.ViewModels
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
         private User? selectedUser;
 
+
+        /// <summary>
+        /// A szerkesztett adat új adat-e
+        /// </summary>
+        public bool IsNew => EditingUser != null && EditingUser.Id == 0;
+
+        [ObservableProperty]
+        private User? editingUser;
+        partial void OnSelectedUserChanged(User? value)
+        {
+            if (value is not null)
+                EditingUser = value.Clone();
+        }
+
         public ObservableCollection<User> Users { get; }
 
         public UserViewModel()
