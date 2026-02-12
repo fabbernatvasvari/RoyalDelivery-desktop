@@ -12,30 +12,23 @@ namespace RoyalDelivery.ViewModels
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private Meal? selectedOrder;
+        private Order? selectedOrder;
 
         public ObservableCollection<Order> Orders { get; }
 
         public OrderViewModel()
         {
             // dummy data
-            Orders = new ObservableCollection<Order>()
-            {
-                new Order { CustomerName = "Pizza", Meals = new List<Meal>(), /* Id and OrderCount cannot be set here */ },
-                new Order { CustomerName = "Gyros", Meals = new List<Meal>(), },
-                new Order { CustomerName = "Hamburger", Meals = new List<Meal>(), },
-                new Order { CustomerName = "Sült csirke", Meals = new List<Meal>(), },
-                new Order { CustomerName = "Sült krumpli", Meals = new List<Meal>(), },
-                new Order { CustomerName = "Kóla", Meals = new List<Meal>(), },
-            };
+            Orders = new ObservableCollection<Order>(_repo.GetAll());
         }
 
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
         {
+           if (SelectedOrder == null) return;
             _repo.Remove(SelectedOrder.Id);
-            Orders.RemoveAt(SelectedOrder.Id.Value);
+            Orders.Remove(SelectedOrder);
             SelectedOrder = null;
         }
 
@@ -43,7 +36,5 @@ namespace RoyalDelivery.ViewModels
         {
             return SelectedOrder != null;
         }
-
-        public ObservableCollection<User> Users { get; }
     }
 }

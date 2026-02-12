@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using RoyalDelivery.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -11,30 +12,26 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private object currentView;
 
-        // ---------- Orders ----------
-        [ObservableProperty]
-        private ObservableCollection<string> orders;
+        private readonly MealViewModel mealViewModel = new();
+        private readonly RestaurantViewModel restaurantViewModel = new();
 
         [ObservableProperty]
-        private string selectedOrder;
+        private Order selectedOrder;
 
-        // ---------- Menu Items ----------
-        [ObservableProperty]
-        private ObservableCollection<string> menuItems = new ObservableCollection<string>()
-        {
-            "Pizza Margherita",
-            "Gyros tál",
-            "Hamburger menü"
-        };
-
-        // ---------- Commands ----------
-        [RelayCommand]
-        private void AddOrder()
-        {
-            Orders.Add($"Rendelés #{Orders.Count + 1}");
-        }
 
         // ---------- Navigation Commands ----------
+
+        [RelayCommand]
+        private void ShowMealView()
+        {
+            CurrentView = new MealViewModel();
+        }
+
+        [RelayCommand]
+        private void ShowRestaurantView()
+        {
+            CurrentView = new RestaurantViewModel();
+        }
         [RelayCommand]
         private void ShowUserView()
         {
@@ -56,24 +53,10 @@ namespace RoyalDelivery.ViewModels
         // ---------- Constructor ----------
         public MainWindowViewModel()
         {
-            // Orders inicializálása
-            Orders = new ObservableCollection<string>()
-            {
-                "Rendelés #101",
-                "Rendelés #102",
-                "Rendelés #103"
-            };
-            SelectedOrder = Orders[0];
+            
 
             // Alapértelmezett nézet: üres (csak menü látszik)
             CurrentView = null;
         }
-
-        public ICommand ShowMealsViewCommand => new RelayCommand(() =>
-        {
-            CurrentView = new MealViewModel();
-        });
-
-
     }
 }

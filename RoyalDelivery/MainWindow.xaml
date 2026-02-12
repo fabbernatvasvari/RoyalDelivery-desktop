@@ -36,10 +36,10 @@
     <DockPanel>
 
         <!-- Top menu -->
-        <Menu DockPanel.Dock="Top">
+        <Menu Name="FelsoMenu" DockPanel.Dock="Top">
             <MenuItem Header="Főmenüpont">
                 <MenuItem Header="Éttermek" Command="{Binding ShowRestaurantViewCommand}" />
-                <MenuItem Header="Ételek" Command="{Binding ShowMealsViewCommand}" />
+                <MenuItem Header="Ételek" Command="{Binding ShowMealViewCommand}" />
                 <MenuItem Header="Rendelések" Command="{Binding ShowOrderViewCommand}" />
                 <MenuItem Header="Felhasználók" Command="{Binding ShowUserViewCommand}" />
             </MenuItem>

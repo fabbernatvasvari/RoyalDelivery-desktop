@@ -1,14 +1,21 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using RoyalDelivery.Models;
+using RoyalDelivery.Repos;
+using System.Collections.ObjectModel;
 
 namespace RoyalDelivery.ViewModels
 {
     public partial class RestaurantViewModel : ObservableObject
     {
-        public string Title { get; } = "Vezérlőpult";
+        private readonly RestaurantRepo _repo = new();
 
-        // Example counters / stats
-        public int OrdersToday { get; set; } = 12;
-        public int ActiveCouriers { get; set; } = 4;
-        public int PendingOrders { get; set; } = 3;
+        [ObservableProperty]
+        public ObservableCollection<Restaurant> restaurants;
+
+        public RestaurantViewModel()
+        {
+            restaurants = new ObservableCollection<Restaurant>(_repo.GetAll());
+        }
+
     }
 }

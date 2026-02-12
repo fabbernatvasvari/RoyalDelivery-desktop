@@ -7,14 +7,21 @@
 
     <StackPanel Margin="10">
         <TextBlock Text="Felhasználók listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-        <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" Height="300">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Név" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-                <DataGridTextColumn Header="Jelszó" Binding="{Binding Password}" />
-                <DataGridTextColumn Header="Bankkártya szám" Binding="{Binding CardNumber}" />
-                <DataGridTextColumn Header="Számlázási cím" Binding="{Binding BillingAddress}" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <ListView ItemsSource="{Binding Users}" Height="300" SelectedItem="{Binding SelectedUser, Mode=TwoWay}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Felhasználónév" DisplayMemberBinding="{Binding Username}" />
+                    <GridViewColumn Header="Keresztnév" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Header="Vezetéknév" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
+                    <GridViewColumn Header="Cím" DisplayMemberBinding="{Binding Address}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Törlés"
+    Command="{Binding DeleteSelectedCommand}"
+    Margin="0,10,0,0" />
     </StackPanel>
 </UserControl>

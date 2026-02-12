@@ -1,24 +1,26 @@
 ﻿using RoyalDelivery.Models;
+using System;
+using System.Diagnostics;
 
 namespace RoyalDelivery.Repos
 {
     /// <summary>
-    /// Repo az iskolai osztályok tárolására
+    /// Repo a rendelések tárolására
     /// </summary>
     public class OrderRepo
     {
         /// <summary>
-        /// Memóriában tárolt iskolai osztályok (tesztadatok)
+        /// Memóriában tárolt tesztadatok
         /// </summary>
-        private List<Order> _items = new()
-        {
-            new Order { CustomerName = "Pizza", Meals = new List<Meal>(), /* Id and OrderCount cannot be set here */ },
-            new Order { CustomerName = "Gyros", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Hamburger", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Sült csirke", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Sült krumpli", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Kóla", Meals = new List<Meal>(), },
-        };
+        private readonly List<Order> _items =
+        [
+            new Order {Id= 0, Name = "Pizza", Meals = [], },
+            new Order {Id= 1,  Name = "Gyros", Meals = [], },
+            new Order {Id= 2,  Name = "Hamburger", Meals = [], },
+            new Order {Id= 3,  Name = "Sült csirke", Meals = [], },
+            new Order {Id= 4,  Name = "Sült krumpli", Meals = [], },
+            new Order {Id= 5,  Name = "Kóla", Meals = [], }
+        ];
 
         /// <summary>
         /// Összes rendelés írható és olvasható listáját visszaadó metódus
@@ -29,14 +31,11 @@ namespace RoyalDelivery.Repos
             return _items.ToList();
         }
 
-        public void Remove(Id selectedId)
+        public void Remove(int id)
         {
-            Console.WriteLine("public void Remove(Meal SelectedOrder) meghívva.");
-            if (selectedId == null)
-                return;
-
-            _items.RemoveAt(selectedId.Value);
-            _items.RemoveAt(selectedId.Value);
+            var index = _items.FindIndex(o => o.Id == id);
+            if (index < 0) return;
+            _items.RemoveAt(index);
         }
     }
 }
