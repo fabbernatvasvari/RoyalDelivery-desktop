@@ -40,7 +40,7 @@ namespace RoyalDelivery.Models
         {
         }
 
-        public void OrderCount()
+        public void OrderDate()
         {
             throw new NotImplementedException();
         }
