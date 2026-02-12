@@ -15,7 +15,7 @@ namespace RoyalDelivery.Models
         public int Id
         {
             get => _id;
-            private set => _id = value;
+            set => _id = value;
         }
         public List<Meal> Meals
         {
@@ -37,11 +37,6 @@ namespace RoyalDelivery.Models
 
         public Order()
         {
-        }
-
-        public void OrderDate()
-        {
-            throw new NotImplementedException();
         }
 
         public override string ToString() {

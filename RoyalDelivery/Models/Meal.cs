@@ -29,7 +29,7 @@
 
         public Meal(int id, string name, double price)
         {
-            Id = Id;
+            Id = id;
             Name = name;
             Price = price;
         }

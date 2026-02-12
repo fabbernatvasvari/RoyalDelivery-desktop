@@ -12,15 +12,15 @@ namespace RoyalDelivery.Repos
         /// <summary>
         /// Memóriában tárolt tesztadatok
         /// </summary>
-        private List<Order> _items = new()
-        {
-            new Order { Name = "Pizza", Meals = new List<Meal>(), },
-            new Order { Name = "Gyros", Meals = new List<Meal>(), },
-            new Order { Name = "Hamburger", Meals = new List<Meal>(), },
-            new Order { Name = "Sült csirke", Meals = new List<Meal>(), },
-            new Order { Name = "Sült krumpli", Meals = new List<Meal>(), },
-            new Order { Name = "Kóla", Meals = new List<Meal>(), }
-        };
+        private readonly List<Order> _items =
+        [
+            new Order {Id= 0, Name = "Pizza", Meals = [], },
+            new Order {Id= 1,  Name = "Gyros", Meals = [], },
+            new Order {Id= 2,  Name = "Hamburger", Meals = [], },
+            new Order {Id= 3,  Name = "Sült csirke", Meals = [], },
+            new Order {Id= 4,  Name = "Sült krumpli", Meals = [], },
+            new Order {Id= 5,  Name = "Kóla", Meals = [], }
+        ];
 
         /// <summary>
         /// Összes rendelés írható és olvasható listáját visszaadó metódus

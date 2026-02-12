@@ -14,10 +14,22 @@ namespace RoyalDelivery.Models
         public string Address { get; set; }
         public List<Meal> Menu { get; set; }
 
-        public Restaurant(string name, string address)
+        public Restaurant(int id, string name, string address)
         {
+            Id = id;
             Name = name;
             Address = address;
+            Menu =
+            [
+                new(0, "Pizza Margherita", 1500),
+                new(1, "Gyros tál", 2000),
+                new(2,"Hamburger", 1800),
+                new(3,"Sült csirke", 2200),
+                new(4,"Rántott sajt", 1700),
+                new(5,"Lazac steak", 3000),
+                new(6,"Vegetáriánus lasagne", 2500),
+                new(7,"Sült zöldségek", 1200)
+            ];
         }
 
         public Restaurant()
