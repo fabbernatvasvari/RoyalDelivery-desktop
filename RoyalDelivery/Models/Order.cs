@@ -12,7 +12,6 @@ namespace RoyalDelivery.Models
         private int _id;
         private List<Meal> _meals;
         private string _name;
-        private static int _nextId = 1;
         public int Id
         {
             get => _id;

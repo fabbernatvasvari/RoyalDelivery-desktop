@@ -10,6 +10,7 @@
         <ListView ItemsSource="{Binding Users}" Height="300" SelectedItem="{Binding SelectedUser, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Felhasználónév" DisplayMemberBinding="{Binding Username}" />
                     <GridViewColumn Header="Keresztnév" DisplayMemberBinding="{Binding FirstName}" />
                     <GridViewColumn Header="Vezetéknév" DisplayMemberBinding="{Binding LastName}" />

@@ -1,4 +1,6 @@
 ﻿using RoyalDelivery.Models;
+using System;
+using System.Diagnostics;
 
 namespace RoyalDelivery.Repos
 {
@@ -29,13 +31,11 @@ namespace RoyalDelivery.Repos
             return _items.ToList();
         }
 
-        public void Remove(int selectedId)
+        public void Remove(int id)
         {
-            Console.WriteLine("public void Remove(Meal SelectedOrder) meghívva.");
-            
-
-            _items.RemoveAt(selectedId);
-            _items.RemoveAt(selectedId);
+            var index = _items.FindIndex(o => o.Id == id);
+            if (index < 0) return;
+            _items.RemoveAt(index);
         }
     }
 }
