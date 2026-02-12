@@ -7,7 +7,7 @@
 
     <StackPanel Margin="10">
         <TextBlock Text="Felhasználók listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-        <ListView ItemsSource="{Binding Users}" Height="300">
+        <ListView ItemsSource="{Binding Users}" Height="300" SelectedItem="{Binding SelectedUser, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Felhasználónév" DisplayMemberBinding="{Binding Username}" />
