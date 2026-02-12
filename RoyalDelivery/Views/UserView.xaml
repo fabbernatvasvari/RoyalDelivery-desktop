@@ -9,11 +9,11 @@
         <TextBlock Text="Felhasználók listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
         <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" Height="300">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Név" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" />
+                <DataGridTextColumn Header="Keresztnév" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Vezetéknév" Binding="{Binding LastName}" />
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-                <DataGridTextColumn Header="Jelszó" Binding="{Binding Password}" />
-                <DataGridTextColumn Header="Bankkártya szám" Binding="{Binding CardNumber}" />
-                <DataGridTextColumn Header="Számlázási cím" Binding="{Binding BillingAddress}" />
+                <DataGridTextColumn Header="Cím" Binding="{Binding Address}" />
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

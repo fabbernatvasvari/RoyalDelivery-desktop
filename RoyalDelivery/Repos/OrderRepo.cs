@@ -3,21 +3,21 @@
 namespace RoyalDelivery.Repos
 {
     /// <summary>
-    /// Repo az iskolai osztályok tárolására
+    /// Repo a rendelések tárolására
     /// </summary>
     public class OrderRepo
     {
         /// <summary>
-        /// Memóriában tárolt iskolai osztályok (tesztadatok)
+        /// Memóriában tárolt tesztadatok
         /// </summary>
         private List<Order> _items = new()
         {
-            new Order { CustomerName = "Pizza", Meals = new List<Meal>(), /* Id and OrderCount cannot be set here */ },
-            new Order { CustomerName = "Gyros", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Hamburger", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Sült csirke", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Sült krumpli", Meals = new List<Meal>(), },
-            new Order { CustomerName = "Kóla", Meals = new List<Meal>(), },
+            new Order { Name = "Pizza", Meals = new List<Meal>(), /* Id and OrderCount cannot be set here */ },
+            new Order { Name = "Gyros", Meals = new List<Meal>(), },
+            new Order { Name = "Hamburger", Meals = new List<Meal>(), },
+            new Order { Name = "Sült csirke", Meals = new List<Meal>(), },
+            new Order { Name = "Sült krumpli", Meals = new List<Meal>(), },
+            new Order { Name = "Kóla", Meals = new List<Meal>(), },
         };
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace RoyalDelivery.Models
         }
 
         public override string ToString() {
-            return $"Az étterem adatai: Id={Id}, Name={Name}, Address={Address}, Menu={string.Join(", ", Menu)}";
+            return $"Az étterem adatai: Id={Id}, Username={Name}, Address={Address}, Menu={string.Join(", ", Menu)}";
         }
     }
 }

@@ -11,7 +11,7 @@ namespace RoyalDelivery.Models
     {
         private int _id;
         private List<Meal> _meals;
-        private string _customerName;
+        private string _name;
         private static int _nextId = 1;
         public int Id
         {
@@ -23,25 +23,30 @@ namespace RoyalDelivery.Models
             get => _meals;
             set => _meals = value;
         }
-        public string CustomerName
+        public string Name
         {
-            get => _customerName;
-            set => _customerName = value;
+            get => _name;
+            set => _name = value;
         }
        
         public Order(List<Meal> meals, string customerName)
         {
             Id = _nextId++;
             _meals = meals ?? throw new ArgumentNullException(nameof(meals));
-            _customerName = customerName ?? throw new ArgumentNullException(nameof(customerName));
+            _name = customerName ?? throw new ArgumentNullException(nameof(customerName));
         }
 
         public Order()
         {
         }
 
+        public void OrderCount()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString() {
-            return $"A rendelés adatai: Id={Id}, Meals={string.Join(", ", Meals)}, CustomerName={CustomerName}";
+            return $"A rendelés adatai: Id={Id}, Meals={string.Join(", ", Meals)}, Username={Name}";
         }
     }
 }
