@@ -73,5 +73,10 @@ namespace RoyalDelivery.Repos
                 return;
             _items.RemoveAt(selectedId.Value);
         }
+
+        public void Add(Restaurant restaurant)
+        {
+            _items.Add(restaurant);
+        }
     }
 }
