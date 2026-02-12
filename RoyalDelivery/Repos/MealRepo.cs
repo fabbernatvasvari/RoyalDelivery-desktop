@@ -9,14 +9,14 @@ namespace RoyalDelivery.Repos
     {
         private List<Meal> _items = new()
         {
-            new Meal("Pizza Margherita", 1500),
-            new Meal("Gyros tál", 2000),
-            new Meal("Hamburger", 1800),
-            new Meal("Sült csirke", 2200),
-            new Meal("Rántott sajt", 1700),
-            new Meal("Lazac steak", 3000),
-            new Meal("Vegetáriánus lasagne", 2500),
-            new Meal("Sült zöldségek", 1200)
+            new Meal(1, "Pizza Margherita", 1500),
+            new Meal(2, "Gyros tál", 2000),
+            new Meal(3,"Hamburger", 1800),
+            new Meal(4,"Sült csirke", 2200),
+            new Meal(5,"Rántott sajt", 1700),
+            new Meal(6,"Lazac steak", 3000),
+            new Meal(7,"Vegetáriánus lasagne", 2500),
+            new Meal(8,"Sült zöldségek", 1200)
         };
 
         public List<Meal> GetAll()
@@ -24,12 +24,11 @@ namespace RoyalDelivery.Repos
             return _items.ToList();
         }
 
-        public void Remove(Id selectedId)
+        public void Remove(int selectedId)
         {
             Console.WriteLine("public void Remove(Meal SelectedMeal) meghívva.");
-            if (selectedId == null)
-                return;
-            _items.RemoveAt(selectedId.Value);
+            
+            _items.RemoveAt(selectedId);
         }
         public void Add(Meal meal)
         {

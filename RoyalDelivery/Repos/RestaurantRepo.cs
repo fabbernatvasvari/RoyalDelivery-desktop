@@ -34,12 +34,11 @@ namespace RoyalDelivery.Repos
         {
             return _items.ToList();
         }
-         public void Remove(Id selectedId)
+         public void Remove(int selectedId)
         {
             Console.WriteLine("public void Remove(Restaurant SelectedRestaurant) meghívva.");
-            if (selectedId == null)
-                return;
-            _items.RemoveAt(selectedId.Value);
+            
+            _items.RemoveAt(selectedId);
         }
 
         public void Add(Restaurant restaurant)

@@ -26,6 +26,7 @@ namespace RoyalDelivery.ViewModels
         [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
         {
+           if (SelectedOrder == null) return;
             _repo.Remove(SelectedOrder.Id);
             Orders.Remove(SelectedOrder);
             SelectedOrder = null;

@@ -26,5 +26,10 @@ namespace RoyalDelivery.Repos
         {
             return _items.ToList();
         }
+
+        internal void Remove(int id)
+        {
+            Console.WriteLine("Törlés");
+        }
     }
 }

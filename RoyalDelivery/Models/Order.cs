@@ -9,11 +9,11 @@ namespace RoyalDelivery.Models
     /// </summary>
     public class Order
     {
-        private Id _id;
+        private int _id;
         private List<Meal> _meals;
         private string _name;
         private static int _nextId = 1;
-        public Id Id
+        public int Id
         {
             get => _id;
             private set => _id = value;
@@ -29,9 +29,9 @@ namespace RoyalDelivery.Models
             set => _name = value;
         }
        
-        public Order(List<Meal> meals, string customerName)
+        public Order(int id, List<Meal> meals, string customerName)
         {
-            Id.Value = _nextId++;
+            Id = id;
             _meals = meals ?? throw new ArgumentNullException(nameof(meals));
             _name = customerName ?? throw new ArgumentNullException(nameof(customerName));
         }
