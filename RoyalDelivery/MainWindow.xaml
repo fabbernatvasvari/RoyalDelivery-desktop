@@ -49,4 +49,14 @@
         <ContentControl Content="{Binding CurrentView}" />
 
     </DockPanel>
+    <Button icon="icons:house_icon">
+        Home
+    </Button>
+    </Button>
+        
+    <Button>
+    <Button icon="icons:settings_icon">
+        Settings
+        
+    </Button>
 </Window>
