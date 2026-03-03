@@ -7,7 +7,7 @@
     {
         private int _id;
         private string _name = string.Empty;
-        private double _price;
+        private int _price;
 
         public int Id
         {
@@ -19,7 +19,7 @@
             get => _name;
             set => _name = value;
         }
-        public double Price
+        public int Price
         {
             get => _price;
             set => _price = value;
@@ -27,7 +27,7 @@
 
 
 
-        public Meal(int id, string name, double price)
+        public Meal(int id, string name, int price)
         {
             Id = id;
             Name = name;

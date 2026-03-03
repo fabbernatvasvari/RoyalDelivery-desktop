@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
+using RoyalDelivery.ViewModels.Pages;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -17,6 +18,11 @@ namespace RoyalDelivery.ViewModels
 
         [ObservableProperty]
         private Order selectedOrder;
+
+
+
+        [ObservableProperty]
+        private string _currentPageTitle;
 
 
         // ---------- Navigation Commands ----------
@@ -49,6 +55,20 @@ namespace RoyalDelivery.ViewModels
         {
             CurrentView = new RestaurantViewModel();
         }
+
+        [RelayCommand]
+        private void ShowSettings()
+        {
+            CurrentView = new SettingsViewModel();
+        }
+
+        [RelayCommand]
+        private void ShowHome()
+        {
+            CurrentView = new HomeViewModel();
+        }
+
+
 
         // ---------- Constructor ----------
         public MainWindowViewModel()
