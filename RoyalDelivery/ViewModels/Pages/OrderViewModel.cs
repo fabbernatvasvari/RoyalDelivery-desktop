@@ -2,11 +2,12 @@
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
 using RoyalDelivery.Repos;
+using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 
 namespace RoyalDelivery.ViewModels
 {
-    public partial class OrderViewModel : ObservableObject
+    public partial class OrderViewModel : ViewModelBase
     {
         private readonly OrderRepo _repo = new();
 

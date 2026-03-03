@@ -2,12 +2,13 @@
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
 using RoyalDelivery.Repos;
+using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 namespace RoyalDelivery.ViewModels
 {
 
-    public partial class UserViewModel : ObservableObject
+    public partial class UserViewModel : ViewModelBase
     {
         private readonly UserRepo _repo = new();
 

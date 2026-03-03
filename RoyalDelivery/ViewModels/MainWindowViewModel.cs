@@ -1,13 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
+using RoyalDelivery.ViewModels.Base;
 using RoyalDelivery.ViewModels.Pages;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace RoyalDelivery.ViewModels
 {
-    public partial class MainWindowViewModel : ObservableObject
+    public partial class MainWindowViewModel : ViewModelBase
     {
         // ---------- Current View ----------
         [ObservableProperty]
