@@ -18,8 +18,11 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private Order selectedOrder;
 
+        public ICommand ShowHomeCommand { get; }
+        public ICommand ShowSettingsCommand { get; }
+
         [ObservableProperty]
-        private string currentPageTitle;
+        private string _currentPageTitle;
 
 
         // ---------- Navigation Commands ----------
