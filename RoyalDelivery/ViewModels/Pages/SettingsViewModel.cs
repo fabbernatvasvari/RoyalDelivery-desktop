@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.ViewModels
+namespace RoyalDelivery.ViewModels.Pages
 {
     internal class SettingsViewModel
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.ViewModels
+namespace RoyalDelivery.ViewModels.Base
 {
-    internal class HomeViewModel
+    internal class ViewModelBase
     {
     }
 }

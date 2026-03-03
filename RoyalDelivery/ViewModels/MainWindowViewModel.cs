@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
+using RoyalDelivery.ViewModels.Pages;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -18,8 +19,7 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private Order selectedOrder;
 
-        public ICommand ShowHomeCommand { get; }
-        public ICommand ShowSettingsCommand { get; }
+
 
         [ObservableProperty]
         private string _currentPageTitle;
