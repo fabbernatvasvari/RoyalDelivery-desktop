@@ -28,9 +28,7 @@
 
     </Window.Resources>
     
-    <Window.DataContext>
-        <viewmodel:MainWindowViewModel />
-    </Window.DataContext>
+
 
     <Grid>
         <Grid.ColumnDefinitions>
