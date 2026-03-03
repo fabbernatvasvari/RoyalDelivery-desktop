@@ -18,6 +18,9 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private Order selectedOrder;
 
+        [ObservableProperty]
+        private string currentPageTitle;
+
 
         // ---------- Navigation Commands ----------
 
@@ -49,6 +52,20 @@ namespace RoyalDelivery.ViewModels
         {
             CurrentView = new RestaurantViewModel();
         }
+
+        [RelayCommand]
+        private void ShowSettings()
+        {
+            CurrentView = new SettingsViewModel();
+        }
+
+        [RelayCommand]
+        private void ShowHome()
+        {
+            CurrentView = new HomeViewModel();
+        }
+
+
 
         // ---------- Constructor ----------
         public MainWindowViewModel()
