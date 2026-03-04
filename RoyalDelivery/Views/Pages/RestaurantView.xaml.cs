@@ -20,7 +20,7 @@ namespace RoyalDelivery.Views.Pages
     {
         public RestaurantView()
         {
-            InitializeComponent();
+            
         }
     }
 }

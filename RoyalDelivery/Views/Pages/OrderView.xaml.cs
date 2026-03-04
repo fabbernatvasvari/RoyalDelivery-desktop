@@ -22,7 +22,7 @@ namespace RoyalDelivery.Views.Pages
     {
         public OrderView()
         {
-            InitializeComponent();
+
         }
     }
 }

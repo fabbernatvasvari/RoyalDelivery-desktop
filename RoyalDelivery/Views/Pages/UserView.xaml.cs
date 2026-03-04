@@ -16,7 +16,7 @@ namespace RoyalDelivery.Views.Pages
     {
         public UserView()
         {
-            InitializeComponent();
+           
         }
     }
 }
