@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace RoyalDelivery.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for MealView.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class MealView : UserControl
+    public partial class HomeView : UserControl
     {
-        public MealView()
+        public HomeView()
         {
             InitializeComponent();
         }
