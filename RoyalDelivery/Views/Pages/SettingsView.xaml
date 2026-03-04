@@ -1,8 +1,15 @@
 ﻿<UserControl x:Class="RoyalDelivery.Views.Pages.SettingsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:pages="clr-namespace:RoyalDelivery.ViewModels.Pages"
+             xmlns:conv="clr-namespace:RoyalDelivery.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d:DataContext="{d:DesignInstance Type=pages:SettingsViewModel}"
              Background="{DynamicResource AppBackground}">
-
+    <UserControl.Resources>
+        <conv:EnumToBooleanConverter x:Key="EnumToBool"/>
+    </UserControl.Resources>
+    
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Margin="30">
             <Grid.RowDefinitions>
@@ -84,11 +91,26 @@
                 <!-- WINDOW -->
                 <Border Style="{DynamicResource CardStyle}">
                     <StackPanel>
-                        <TextBlock Text="Ablak"
-                                   Style="{DynamicResource CardTitleStyle}"/>
+                        <TextBlock Text="Ablakos mód"
+                   Style="{DynamicResource CardTitleStyle}"/>
 
-                        <CheckBox Content="Átméretezhető ablak"
-                                  IsChecked="{Binding IsResizable}"/>
+                        <RadioButton Content="Átméretezhető ablak"
+                     GroupName="WindowMode"
+                     IsChecked="{Binding SelectedWindowMode,
+                         Converter={StaticResource EnumToBool},
+                         ConverterParameter=Resizable}" />
+
+                        <RadioButton Content="Keret nélküli"
+                     GroupName="WindowMode"
+                     IsChecked="{Binding SelectedWindowMode,
+                         Converter={StaticResource EnumToBool},
+                         ConverterParameter=Borderless}" />
+
+                        <RadioButton Content="Teljes képernyő"
+                     GroupName="WindowMode"
+                     IsChecked="{Binding SelectedWindowMode,
+                         Converter={StaticResource EnumToBool},
+                         ConverterParameter=Fullscreen}" />
                     </StackPanel>
                 </Border>
 
