@@ -5,7 +5,7 @@ using RoyalDelivery.Repos;
 using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 
-namespace RoyalDelivery.ViewModels
+namespace RoyalDelivery.ViewModels.Pages
 {
     public partial class RestaurantViewModel : ViewModelBase
     {
