@@ -4,6 +4,34 @@
              xmlns:local="clr-namespace:RoyalDelivery"
              >
     <Application.Resources>
-         
+        <ResourceDictionary>
+
+            <!-- DEFAULT COLORS -->
+            <SolidColorBrush x:Key="AppBackground" Color="#F5F6FA"/>
+            <SolidColorBrush x:Key="PrimaryTextBrush" Color="#2F3640"/>
+            <SolidColorBrush x:Key="AccentBrush" Color="#0984E3"/>
+
+            <!-- CARD STYLE -->
+            <Style x:Key="CardStyle" TargetType="Border">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="Padding" Value="20"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect BlurRadius="10"
+                                  ShadowDepth="2"
+                                  Opacity="0.2"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="CardTitleStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
