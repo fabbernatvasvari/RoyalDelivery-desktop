@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RoyalDelivery.Views
+namespace RoyalDelivery.Views.Pages
 {
     /// <summary>
     /// Interaction logic for RestaurantView.xaml
@@ -20,7 +20,7 @@ namespace RoyalDelivery.Views
     {
         public RestaurantView()
         {
-            InitializeComponent();
+            
         }
     }
 }

@@ -2,13 +2,14 @@
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
 using RoyalDelivery.Repos;
+using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 
-namespace RoyalDelivery.ViewModels
+namespace RoyalDelivery.ViewModels.Pages
 {
-    public partial class OrderViewModel : ObservableObject
+    public partial class OrderViewModel : ViewModelBase
     {
-        private readonly OrderRepo _repo = new();
+        private readonly OrderRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -16,8 +17,9 @@ namespace RoyalDelivery.ViewModels
 
         public ObservableCollection<Order> Orders { get; }
 
-        public OrderViewModel()
+        public OrderViewModel(OrderRepo orderRepo)
         {
+            _repo = orderRepo;
             // dummy data
             Orders = new ObservableCollection<Order>(_repo.GetAll());
         }

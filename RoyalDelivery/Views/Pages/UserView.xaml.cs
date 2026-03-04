@@ -10,13 +10,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace RoyalDelivery.Views
+namespace RoyalDelivery.Views.Pages
 {
     public partial class UserView : UserControl
     {
         public UserView()
         {
-            InitializeComponent();
+           
         }
     }
 }
