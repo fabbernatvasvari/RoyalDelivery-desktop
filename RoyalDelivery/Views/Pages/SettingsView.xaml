@@ -1,12 +1,98 @@
 ﻿<UserControl x:Class="RoyalDelivery.Views.Pages.SettingsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:RoyalDelivery.Views.Pages"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Label Content="⚙"/>
-    </Grid>
+             Background="{DynamicResource AppBackground}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title -->
+            <TextBlock Text="⚙ Alkalmazás Beállítások"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+            <!-- SETTINGS GRID -->
+            <UniformGrid Grid.Row="2" Columns="2" Rows="3" Margin="0,20,0,0">
+
+                <!-- THEME CARD -->
+                <Border Style="{DynamicResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Téma" Style="{DynamicResource CardTitleStyle}"/>
+
+                        <Button Content="Világos mód"
+                                Margin="0,5"
+                                Command="{Binding SetLightThemeCommand}"/>
+
+                        <Button Content="Sötét mód"
+                                Margin="0,5"
+                                Command="{Binding SetDarkThemeCommand}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- ACCENT COLOR -->
+                <Border Style="{DynamicResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Színvilág" Style="{DynamicResource CardTitleStyle}"/>
+
+                        <Button Content="Kék"
+                                Background="#0984E3"
+                                Foreground="White"
+                                Margin="0,5"
+                                Command="{Binding SetBlueAccentCommand}"/>
+
+                        <Button Content="Zöld"
+                                Background="#00B894"
+                                Foreground="White"
+                                Margin="0,5"
+                                Command="{Binding SetGreenAccentCommand}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- FONT SIZE -->
+                <Border Style="{DynamicResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Betűméret"
+                                   Style="{DynamicResource CardTitleStyle}"/>
+
+                        <Slider Minimum="12"
+                                Maximum="24"
+                                Value="{Binding FontSizeSetting}"
+                                Margin="0,10"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- ACCESSIBILITY -->
+                <Border Style="{DynamicResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Accessibility"
+                                   Style="{DynamicResource CardTitleStyle}"/>
+
+                        <CheckBox Content="High Contrast mód"
+                                  IsChecked="{Binding HighContrastEnabled}"/>
+
+                        <CheckBox Content="Színvak mód"
+                                  IsChecked="{Binding ColorBlindModeEnabled}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- WINDOW -->
+                <Border Style="{DynamicResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Ablak"
+                                   Style="{DynamicResource CardTitleStyle}"/>
+
+                        <CheckBox Content="Átméretezhető ablak"
+                                  IsChecked="{Binding IsResizable}"/>
+                    </StackPanel>
+                </Border>
+
+            </UniformGrid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
