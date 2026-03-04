@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-            return $"A rendelés adatai: Id={Id}, Username={Name}, Price={Price}";
+            return $"Az étel adatai: Id={Id}, Username={Name}, Price={Price}";
         }
     }
 }

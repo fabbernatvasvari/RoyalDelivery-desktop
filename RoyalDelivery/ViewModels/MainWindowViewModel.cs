@@ -14,16 +14,21 @@ namespace RoyalDelivery.ViewModels
         [ObservableProperty]
         private object currentView;
 
-        private readonly MealViewModel mealViewModel = new();
-        private readonly RestaurantViewModel restaurantViewModel = new();
+        private readonly MealViewModel _mealViewModel;
+        private readonly RestaurantViewModel _restaurantViewModel;
+        private readonly OrderViewModel _orderViewModel;
+        private readonly UserViewModel _userViewModel;
+        private readonly SettingsViewModel _settingsViewModel;
+        private readonly HomeViewModel _homeViewModel;
+
 
         [ObservableProperty]
-        private Order selectedOrder;
+        private Order selectedOrder = new Order();
 
 
 
         [ObservableProperty]
-        private string _currentPageTitle;
+        private string _currentPageTitle=string.Empty;
 
 
         // ---------- Navigation Commands ----------
@@ -31,53 +36,63 @@ namespace RoyalDelivery.ViewModels
         [RelayCommand]
         private void ShowMealView()
         {
-            CurrentView = new MealViewModel();
+            CurrentView = _mealViewModel;
         }
 
         [RelayCommand]
         private void ShowRestaurantView()
         {
-            CurrentView = new RestaurantViewModel();
+            CurrentView = _restaurantViewModel;
         }
         [RelayCommand]
         private void ShowUserView()
         {
-            CurrentView = new UserViewModel();
+            CurrentView = _userViewModel;
         }
 
         [RelayCommand]
         private void ShowOrderView()
         {
-            CurrentView = new OrderViewModel();
+            CurrentView = _orderViewModel;
         }
 
-        [RelayCommand]
+       /* [RelayCommand]
         private void ShowControlPanelView()
         {
-            CurrentView = new RestaurantViewModel();
-        }
+            CurrentView = 
+        }*/
 
         [RelayCommand]
         private void ShowSettings()
         {
-            CurrentView = new SettingsViewModel();
+            CurrentView = _settingsViewModel;
         }
 
         [RelayCommand]
         private void ShowHome()
         {
-            CurrentView = new HomeViewModel();
+            CurrentView = _homeViewModel;
         }
 
 
 
         // ---------- Constructor ----------
-        public MainWindowViewModel()
+        public MainWindowViewModel(
+            MealViewModel mealViewModel,
+            RestaurantViewModel restaurantViewModel,
+            OrderViewModel orderViewModel,
+            UserViewModel userViewModel,
+            SettingsViewModel settingsViewModel,
+            HomeViewModel homeViewModel)
         {
-            
+            _mealViewModel = mealViewModel;
+            _restaurantViewModel = restaurantViewModel;
+            _orderViewModel = orderViewModel;
+            _userViewModel = userViewModel;
+            _settingsViewModel = settingsViewModel;
+            _homeViewModel = homeViewModel;
 
-            // Alapértelmezett nézet: üres (csak menü látszik)
-            CurrentView = null;
+            CurrentView = _homeViewModel;
         }
     }
 }

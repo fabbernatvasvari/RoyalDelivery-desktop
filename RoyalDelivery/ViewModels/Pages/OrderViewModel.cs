@@ -9,7 +9,7 @@ namespace RoyalDelivery.ViewModels
 {
     public partial class OrderViewModel : ViewModelBase
     {
-        private readonly OrderRepo _repo = new();
+        private readonly OrderRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -17,8 +17,9 @@ namespace RoyalDelivery.ViewModels
 
         public ObservableCollection<Order> Orders { get; }
 
-        public OrderViewModel()
+        public OrderViewModel(OrderRepo orderRepo)
         {
+            _repo = orderRepo;
             // dummy data
             Orders = new ObservableCollection<Order>(_repo.GetAll());
         }

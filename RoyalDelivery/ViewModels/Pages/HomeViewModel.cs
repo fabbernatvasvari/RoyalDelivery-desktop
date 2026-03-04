@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RoyalDelivery.ViewModels.Pages
 {
-    internal class HomeViewModel : ViewModelBase
+    public class HomeViewModel : ViewModelBase
     {
     }
 }

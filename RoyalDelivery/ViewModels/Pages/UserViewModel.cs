@@ -10,7 +10,7 @@ namespace RoyalDelivery.ViewModels
 
     public partial class UserViewModel : ViewModelBase
     {
-        private readonly UserRepo _repo = new();
+        private readonly UserRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -32,8 +32,9 @@ namespace RoyalDelivery.ViewModels
 
         public ObservableCollection<User> Users { get; }
 
-        public UserViewModel()
+        public UserViewModel(UserRepo userRepo)
         {
+            _repo = userRepo;
             Users = new ObservableCollection<User>(_repo.GetAll());
         }
 
