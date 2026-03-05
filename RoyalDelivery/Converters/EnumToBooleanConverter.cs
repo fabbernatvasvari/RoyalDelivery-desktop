@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 namespace RoyalDelivery.Converters;
+
 public class EnumToBooleanConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
