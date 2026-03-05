@@ -1,0 +1,30 @@
+Következő feladatok: MySql integrálva van a projektbe, a XAMPP-on keresztül. A http://localhost/phpmyadmin/index.php?route=/database/structure&db=royaldelivery_db adatbázist használjuk, és a 
+`dotnet ef dbcontext scaffold "Server=localhost;Database=royaldelivery_db;User=root;Password=;" Pomelo.EntityFrameworkCore.MySql -o Models/DbMysqlModels -f` paranccsal kötöttük össze a `D:\Vizsgaremek\royal-delivery-nalhi-gurban-fabian\RoyalDelivery-desktop\RoyalDelivery.sln` solution-re alapuló projektünkkel. VIszont rámegyünk a play gombra (debugoljuk, dotnet run, stb.), de a 
+<DataTemplate DataType="{x:Type viewmodel:MealViewModel}">
+    <view:MealView />
+</DataTemplate>
+
+<!-- RestaurantView -->
+<DataTemplate DataType="{x:Type viewmodel:RestaurantViewModel}">
+    <view:RestaurantView />
+</DataTemplate>
+
+<!-- OrderView -->
+<DataTemplate DataType="{x:Type viewmodel:OrderViewModel}">
+    <view:OrderView />
+</DataTemplate>
+
+<!-- UserView -->
+<DataTemplate DataType="{x:Type viewmodel:UserViewModel}">
+    <view:UserView />
+</DataTemplate>
+datatemplate-ek helyén nem a kilistázott view-ek jelennek meg (mert amúgy egy 
+<Grid>
+    <StackPanel Margin="10">
+        <TextBlock Text="Ételek listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+        <ListView ItemsSource="{Binding Meals}" Height="300" SelectedItem="{Binding SelectedMeal, Mode=TwoWay}">
+            <ListView.View>
+                <GridView>
+                    
+                <GridViewColumn
+struktúrában elvileg meg kellene jelenniük listás elrendezésben az elemeknek, de jelenleg semmi nem jelenik meg. Mi lehet az oka/mit érdemes kipróbálni, hogy menjen?
