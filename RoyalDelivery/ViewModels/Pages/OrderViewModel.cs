@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
-using RoyalDelivery.Repos;
+using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 
@@ -9,7 +9,7 @@ namespace RoyalDelivery.ViewModels.Pages
 {
     public partial class OrderViewModel : ViewModelBase
     {
-        private readonly OrderRepo _repo;
+        private readonly OrdeMemoryRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -21,7 +21,7 @@ namespace RoyalDelivery.ViewModels.Pages
         {
             
         }
-        public OrderViewModel(OrderRepo orderRepo)
+        public OrderViewModel(OrdeMemoryRepo orderRepo)
         {
             _repo = orderRepo;
             // dummy data

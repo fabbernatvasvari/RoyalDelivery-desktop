@@ -2,14 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace RoyalDelivery.Repos.DbMysqlRepos
 {
-    public class IOrderRepository
+    public class MealDbRepo
     {
-        private readonly List<Order> _items;
 
-        public List<Order> GetAll()
+        private readonly List<Meal> _items;
+
+        public List<Meal> GetAll()
         {
             return _items.ToList();
         }
@@ -20,9 +22,9 @@ namespace RoyalDelivery.Repos.DbMysqlRepos
 
             _items.RemoveAt(selectedId);
         }
-        public void Add(Order order)
+        public void Add(Meal meal)
         {
-            _items.Add(order);
+            _items.Add(meal);
         }
     }
 }

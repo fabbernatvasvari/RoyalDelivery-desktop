@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
-using RoyalDelivery.Repos;
+using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace RoyalDelivery.ViewModels.Pages
 {
     public partial class MealViewModel : ViewModelBase
     {
-        private readonly MealRepo _repo;
+        private readonly MealMemoryRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -24,7 +24,7 @@ namespace RoyalDelivery.ViewModels.Pages
         public MealViewModel()
         {
         }
-        public MealViewModel(MealRepo mealRepo)
+        public MealViewModel(MealMemoryRepo mealRepo)
         {
             _repo = mealRepo;
             Meals = new ObservableCollection<Meal>(_repo.GetAll());

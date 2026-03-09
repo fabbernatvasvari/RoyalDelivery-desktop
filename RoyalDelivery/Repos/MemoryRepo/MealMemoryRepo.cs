@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.Repos
+namespace RoyalDelivery.Repos.MemoryRepo
 {
-    public class MealRepo
+    public class MealMemoryRepo
     {
         private List<Meal> _items = new()
         {

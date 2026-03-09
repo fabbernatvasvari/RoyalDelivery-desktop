@@ -5,11 +5,11 @@ using System.Text;
 
 namespace RoyalDelivery.Repos.DbMysqlRepos
 {
-    public class IRestaurantRepository
+    public class UserDbRepo
     {
-        private readonly List<Restaurant> _items;
+        private readonly List<User> _items;
 
-        public List<Restaurant> GetAll()
+        public List<User> GetAll()
         {
             return _items.ToList();
         }
@@ -20,9 +20,9 @@ namespace RoyalDelivery.Repos.DbMysqlRepos
 
             _items.RemoveAt(selectedId);
         }
-        public void Add(Restaurant restaurant)
+        public void Add(User user)
         {
-            _items.Add(restaurant);
+            _items.Add(user);
         }
     }
 }

@@ -7,14 +7,14 @@ namespace RoyalDelivery.Models
     /// <summary>
     /// Étterem.
     /// </summary>
-    public class Restaurant
+    public class RestaurantFake
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public List<Meal> Menu { get; set; }
 
-        public Restaurant(int id, string name, string address)
+        public RestaurantFake(int id, string name, string address)
         {
             Id = id;
             Name = name;
@@ -32,7 +32,7 @@ namespace RoyalDelivery.Models
             ];
         }
 
-        public Restaurant()
+        public RestaurantFake()
         {
         }
 

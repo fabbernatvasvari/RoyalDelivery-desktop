@@ -1,11 +1,10 @@
-﻿using RoyalDelivery.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using RoyalDelivery.Models.DbMysqlModels;
+using RoyalDelivery.Repos.Interface;
 
-namespace RoyalDelivery.Repos
+namespace RoyalDelivery.Repos.MemoryRepo
 {
-    public class RestaurantRepo
+    public class RestaurantMemoryRepo : IRestaurantRepo
     {
         private List<Restaurant> _items = new()
         {
@@ -13,20 +12,20 @@ namespace RoyalDelivery.Repos
             {
                 Id = 0,
                 Name = "Royal Diner",
-                Address = "123 Crown St."
+                //Address = "123 Crown St."
             },
             new Restaurant
             {
                 Id = 1,
                 Name = "Palace Pizzeria",
-                Address = "45 Marble Ave."
+                //Address = "45 Marble Ave."
                 
             },
             new Restaurant
             {
                 Id = 2,
                 Name = "Sovereign Sushi",
-                Address = "9 Ocean Blvd."
+                //Address = "9 Ocean Blvd."
             }
         };
 
@@ -34,7 +33,7 @@ namespace RoyalDelivery.Repos
         {
             return _items.ToList();
         }
-         public void Remove(int selectedId)
+        /* public void Remove(int selectedId)
         {
             Console.WriteLine("public void Remove(Restaurant SelectedRestaurant) meghívva.");
             
@@ -44,6 +43,6 @@ namespace RoyalDelivery.Repos
         public void Add(Restaurant restaurant)
         {
             _items.Add(restaurant);
-        }
+        }*/
     }
 }

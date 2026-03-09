@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace RoyalDelivery.Repos
+namespace RoyalDelivery.Repos.MemoryRepo
 {
-    public class UserRepo
+    public class UserMemoryRepo
     {
         private List<User> _items = new()
         {

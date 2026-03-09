@@ -2,12 +2,12 @@
 using System;
 using System.Diagnostics;
 
-namespace RoyalDelivery.Repos
+namespace RoyalDelivery.Repos.MemoryRepo
 {
     /// <summary>
     /// Repo a rendelések tárolására
     /// </summary>
-    public class OrderRepo
+    public class OrdeMemoryRepo
     {
         /// <summary>
         /// Memóriában tárolt tesztadatok

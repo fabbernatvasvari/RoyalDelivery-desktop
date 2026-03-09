@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models;
-using RoyalDelivery.Repos;
+using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
@@ -10,7 +10,7 @@ namespace RoyalDelivery.ViewModels.Pages
 
     public partial class UserViewModel : ViewModelBase
     {
-        private readonly UserRepo _repo;
+        private readonly UserMemoryRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
@@ -37,7 +37,7 @@ namespace RoyalDelivery.ViewModels.Pages
             
         }
 
-        public UserViewModel(UserRepo userRepo)
+        public UserViewModel(UserMemoryRepo userRepo)
         {
             _repo = userRepo;
             Users = new ObservableCollection<User>(_repo.GetAll());

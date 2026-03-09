@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RoyalDelivery.Models.DbMysqlModels;
-using RoyalDelivery.Repos;
+using RoyalDelivery.Repos.DbMysqlRepos;
+using RoyalDelivery.Repos.Interface;
+using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels;
 using RoyalDelivery.ViewModels.Pages;
 using System;
@@ -35,10 +37,10 @@ namespace RoyalDelivery
             services.AddScoped<RoyaldeliveryDbContext>();
 
             // Repo
-            services.AddSingleton<MealRepo>();
-            services.AddSingleton<OrderRepo>();
-            services.AddSingleton<RestaurantRepo>();
-            services.AddSingleton<UserRepo>();
+            services.AddSingleton<MealMemoryRepo>();
+            services.AddSingleton<OrdeMemoryRepo>();
+            services.AddSingleton<IRestaurantRepo,RestaurantDbRepo>();
+            services.AddSingleton<UserMemoryRepo>();
 
             // ViewModels
             services.AddSingleton<MainWindowViewModel>();
