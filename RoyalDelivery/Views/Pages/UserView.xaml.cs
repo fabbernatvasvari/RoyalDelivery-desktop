@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoyalDelivery.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,7 +17,7 @@ namespace RoyalDelivery.Views.Pages
     {
         public UserView()
         {
-           
+            InitializeComponent();
         }
     }
 }

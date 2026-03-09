@@ -32,6 +32,11 @@ namespace RoyalDelivery.ViewModels.Pages
 
         public ObservableCollection<User> Users { get; }
 
+        public UserViewModel()
+        {
+            
+        }
+
         public UserViewModel(UserRepo userRepo)
         {
             _repo = userRepo;

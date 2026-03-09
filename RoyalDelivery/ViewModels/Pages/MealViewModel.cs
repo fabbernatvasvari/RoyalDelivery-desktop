@@ -21,6 +21,9 @@ namespace RoyalDelivery.ViewModels.Pages
         [ObservableProperty]
         private ObservableCollection<Meal> meals;
 
+        public MealViewModel()
+        {
+        }
         public MealViewModel(MealRepo mealRepo)
         {
             _repo = mealRepo;

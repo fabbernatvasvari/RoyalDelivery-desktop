@@ -17,6 +17,10 @@ namespace RoyalDelivery.ViewModels.Pages
 
         public ObservableCollection<Order> Orders { get; }
 
+        public OrderViewModel()
+        {
+            
+        }
         public OrderViewModel(OrderRepo orderRepo)
         {
             _repo = orderRepo;

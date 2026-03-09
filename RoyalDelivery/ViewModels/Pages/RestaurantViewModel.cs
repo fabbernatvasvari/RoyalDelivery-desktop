@@ -20,6 +20,11 @@ namespace RoyalDelivery.ViewModels.Pages
         [ObservableProperty]
         public ObservableCollection<Restaurant> restaurants;
 
+        public RestaurantViewModel()
+        {
+            
+        }
+
         public RestaurantViewModel(RestaurantRepo restaurantRepo)
         {
             _repo = restaurantRepo;
