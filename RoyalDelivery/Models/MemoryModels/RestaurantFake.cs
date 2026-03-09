@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.Models
+namespace RoyalDelivery.Models.MemoryModels
 {
     /// <summary>
     /// Étterem.
@@ -12,7 +12,7 @@ namespace RoyalDelivery.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public List<Meal> Menu { get; set; }
+        public List<MealFake> Menu { get; set; }
 
         public RestaurantFake(int id, string name, string address)
         {

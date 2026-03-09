@@ -1,9 +1,9 @@
-﻿namespace RoyalDelivery.Models
+﻿namespace RoyalDelivery.Models.MemoryModels
 {
     /// <summary>
     /// Étel.
     /// </summary>
-    public class Meal
+    public class MealFake
     {
         private int _id;
         private string _name = string.Empty;
@@ -27,14 +27,14 @@
 
 
 
-        public Meal(int id, string name, int price)
+        public MealFake(int id, string name, int price)
         {
             Id = id;
             Name = name;
             Price = price;
         }
 
-        public Meal()
+        public MealFake()
         {
         }
 

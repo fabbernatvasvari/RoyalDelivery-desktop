@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RoyalDelivery.Models;
+using RoyalDelivery.Models.MemoryModels;
 using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
@@ -14,7 +14,7 @@ namespace RoyalDelivery.ViewModels.Pages
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private User? selectedUser;
+        private UserFake? selectedUser;
 
 
         /// <summary>
@@ -23,14 +23,14 @@ namespace RoyalDelivery.ViewModels.Pages
         public bool IsNew => EditingUser != null && EditingUser.Id == 0;
 
         [ObservableProperty]
-        private User? editingUser;
-        partial void OnSelectedUserChanged(User? value)
+        private UserFake? editingUser;
+        partial void OnSelectedUserChanged(UserFake? value)
         {
             if (value is not null)
                 EditingUser = value.Clone();
         }
 
-        public ObservableCollection<User> Users { get; }
+        public ObservableCollection<UserFake> Users { get; }
 
         public UserViewModel()
         {
@@ -40,7 +40,7 @@ namespace RoyalDelivery.ViewModels.Pages
         public UserViewModel(UserMemoryRepo userRepo)
         {
             _repo = userRepo;
-            Users = new ObservableCollection<User>(_repo.GetAll());
+            Users = new ObservableCollection<UserFake>(_repo.GetAll());
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]

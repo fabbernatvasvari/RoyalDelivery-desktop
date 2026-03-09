@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.Models
+namespace RoyalDelivery.Models.MemoryModels
 {
     /// <summary>
     /// Rendelés.
     /// </summary>
-    public class Order
+    public class OrderFake
     {
         private int _id;
-        private List<Meal> _meals;
+        private List<MealFake> _meals;
         private string _name;
         public int Id
         {
             get => _id;
             set => _id = value;
         }
-        public List<Meal> Meals
+        public List<MealFake> Meals
         {
             get => _meals;
             set => _meals = value;
@@ -28,14 +28,14 @@ namespace RoyalDelivery.Models
             set => _name = value;
         }
        
-        public Order(int id, List<Meal> meals, string customerName)
+        public OrderFake(int id, List<MealFake> meals, string customerName)
         {
             Id = id;
             _meals = meals ?? throw new ArgumentNullException(nameof(meals));
             _name = customerName ?? throw new ArgumentNullException(nameof(customerName));
         }
 
-        public Order()
+        public OrderFake()
         {
         }
 

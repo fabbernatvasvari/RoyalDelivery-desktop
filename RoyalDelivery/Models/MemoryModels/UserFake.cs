@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoyalDelivery.Models
+namespace RoyalDelivery.Models.MemoryModels
 {
     /// <summary>
     /// Felhasználó.
     /// </summary>
-    public sealed class User : ICloneable
+    public sealed class UserFake : ICloneable
     {
         public int Id { get; set; }
         public string? Username { get; set; }
@@ -16,12 +16,12 @@ namespace RoyalDelivery.Models
         public string? Email { get; set; }
         public string? Address { get; set; }
 
-        public User()
+        public UserFake()
         {
             
         }
 
-        public User(int id, string? username, string? firstName, string? lastName, string? email, string? address)
+        public UserFake(int id, string? username, string? firstName, string? lastName, string? email, string? address)
         {
             Id = id;
             Username = username;
@@ -36,7 +36,7 @@ namespace RoyalDelivery.Models
             return $"A felhasználó adatai: Id={Id}, Username={Username}, FirstName={FirstName}, LastName={LastName}, Email={Email}, Address={Address}";
         }
 
-        public void Set(User schoolClass)
+        public void Set(UserFake schoolClass)
         {
             Id = schoolClass.Id;
             Username = schoolClass.Username;
@@ -46,8 +46,8 @@ namespace RoyalDelivery.Models
             Address = schoolClass.Address;
         }
 
-        public User Clone()
-             => new User(Id,Username, FirstName, LastName, Email, Address);
+        public UserFake Clone()
+             => new UserFake(Id,Username, FirstName, LastName, Email, Address);
         object ICloneable.Clone() => Clone();
     }
 }

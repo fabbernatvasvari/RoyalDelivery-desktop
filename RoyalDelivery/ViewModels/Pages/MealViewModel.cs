@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RoyalDelivery.Models;
+using RoyalDelivery.Models.MemoryModels;
 using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System;
@@ -16,10 +16,10 @@ namespace RoyalDelivery.ViewModels.Pages
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private Meal? selectedMeal;
+        private MealFake? selectedMeal;
 
         [ObservableProperty]
-        private ObservableCollection<Meal> meals;
+        private ObservableCollection<MealFake> meals;
 
         public MealViewModel()
         {
@@ -27,7 +27,7 @@ namespace RoyalDelivery.ViewModels.Pages
         public MealViewModel(MealMemoryRepo mealRepo)
         {
             _repo = mealRepo;
-            Meals = new ObservableCollection<Meal>(_repo.GetAll());
+            Meals = new ObservableCollection<MealFake>(_repo.GetAll());
         }
 
                 [RelayCommand(CanExecute = nameof(CanDelete))]
