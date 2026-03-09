@@ -16,6 +16,7 @@
                     <GridViewColumn Header="Vezetéknév" DisplayMemberBinding="{Binding LastName}" />
                     <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
                     <GridViewColumn Header="Cím" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="Jelszó" DisplayMemberBinding="{Binding Password}" />
                 </GridView>
             </ListView.View>
             <ListView.Style>
