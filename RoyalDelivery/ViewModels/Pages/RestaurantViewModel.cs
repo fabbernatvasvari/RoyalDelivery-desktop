@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using RoyalDelivery.Models.DbMysqlModels;
 using RoyalDelivery.Repos.Interface;
-using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
 using System.Collections.ObjectModel;
 
@@ -12,10 +11,9 @@ namespace RoyalDelivery.ViewModels.Pages
     {
         private readonly IRestaurantRepo _repo;
 
-
-       /* [ObservableProperty]
+        [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private Restaurant? selectedRestaurant;*/
+        private Restaurant? selectedRestaurant;
 
 
         [ObservableProperty]
@@ -23,7 +21,6 @@ namespace RoyalDelivery.ViewModels.Pages
 
         public RestaurantViewModel()
         {
-            
         }
 
         public RestaurantViewModel(IRestaurantRepo restaurantRepo)
@@ -32,18 +29,18 @@ namespace RoyalDelivery.ViewModels.Pages
             restaurants = new ObservableCollection<Restaurant>(_repo.GetAll());
         }
 
-        /*[RelayCommand(CanExecute = nameof(CanDelete))]
+        [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
         {
-            if (SelectedRestaurant == null) return;
-            _repo.Remove(SelectedRestaurant.Id);
-            Restaurants.Remove(SelectedRestaurant);
-            SelectedRestaurant = null;
+            //if (SelectedRestaurant == null) return;
+            //_repo.Remove(SelectedRestaurant.Id);
+            //Restaurants.Remove(SelectedRestaurant);
+            //SelectedRestaurant = null;
         }
 
         private bool CanDelete()
         {
             return SelectedRestaurant != null;
-        }*/
+        }
     }
 }

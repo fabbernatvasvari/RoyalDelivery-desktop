@@ -1,42 +1,40 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RoyalDelivery.Models.MemoryModels;
-using RoyalDelivery.Repos.MemoryRepo;
+using RoyalDelivery.Models.DbMysqlModels;
+using RoyalDelivery.Repos.Interface;
 using RoyalDelivery.ViewModels.Base;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace RoyalDelivery.ViewModels.Pages
 {
     public partial class MealViewModel : ViewModelBase
     {
-        private readonly MealMemoryRepo _repo;
+        private readonly IMealRepo _repo;
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private MealFake? selectedMeal;
+        private Meal? selectedMeal;
 
         [ObservableProperty]
-        private ObservableCollection<MealFake> meals;
+        private ObservableCollection<Meal> meals;
 
         public MealViewModel()
         {
         }
-        public MealViewModel(MealMemoryRepo mealRepo)
+
+        public MealViewModel(IMealRepo mealRepo)
         {
             _repo = mealRepo;
-            Meals = new ObservableCollection<MealFake>(_repo.GetAll());
+            meals = new ObservableCollection<Meal>(_repo.GetAll());
         }
 
-                [RelayCommand(CanExecute = nameof(CanDelete))]
+        [RelayCommand(CanExecute = nameof(CanDelete))]
         private void DeleteSelected()
         {
-            if (SelectedMeal == null) return;
-            _repo.Remove(SelectedMeal.Id);
-            Meals.Remove(SelectedMeal);
-            SelectedMeal = null;
+            //if (SelectedMeal == null) return;
+            //_repo.Remove(SelectedMeal.Id);
+            //meals.Remove(SelectedMeal);
+            //SelectedMeal = null;
         }
 
         private bool CanDelete()

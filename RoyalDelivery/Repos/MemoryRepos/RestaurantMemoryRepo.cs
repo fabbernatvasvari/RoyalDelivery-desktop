@@ -10,20 +10,20 @@ namespace RoyalDelivery.Repos.MemoryRepo
         {
             new Restaurant
             {
-                Id = 0,
+                Id = 1,
                 Name = "Royal Diner",
                 //Address = "123 Crown St."
             },
             new Restaurant
             {
-                Id = 1,
+                Id = 2,
                 Name = "Palace Pizzeria",
                 //Address = "45 Marble Ave."
                 
             },
             new Restaurant
             {
-                Id = 2,
+                Id = 3,
                 Name = "Sovereign Sushi",
                 //Address = "9 Ocean Blvd."
             }

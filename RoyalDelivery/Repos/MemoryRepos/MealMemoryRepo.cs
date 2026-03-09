@@ -1,25 +1,24 @@
-﻿using RoyalDelivery.Models.MemoryModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using RoyalDelivery.Models.DbMysqlModels;
+using System.Xml.Linq;
 
 namespace RoyalDelivery.Repos.MemoryRepo
 {
     public class MealMemoryRepo
     {
-        private List<MealFake> _items = new()
+        private List<Meal> _items = new()
         {
-            new MealFake(1, "Pizza Margherita", 1500),
-            new MealFake(2, "Gyros tál", 2000),
-            new MealFake(3,"Hamburger", 1800),
-            new MealFake(4,"Sült csirke", 2200),
-            new MealFake(5,"Rántott sajt", 1700),
-            new MealFake(6,"Lazac steak", 3000),
-            new MealFake(7,"Vegetáriánus lasagne", 2500),
-            new MealFake(8,"Sült zöldségek", 1200)
+            new Meal{Id = 1,  Name = "Pizza Margherita",Price= 1500},
+            new Meal{Id = 2, Name =  "Gyros tál", Price=2000},
+            new Meal{Id = 3, Name = "Hamburger",Price= 1800},
+            new Meal{Id = 4, Name = "Sült csirke", Price=2200},
+            new Meal{Id = 5, Name = "Rántott sajt",Price= 1700},
+            new Meal{Id = 6, Name = "Lazac steak",Price= 3000},
+            new Meal{Id = 7, Name = "Vegetáriánus lasagne", Price=2500},
+            new Meal{Id = 8, Name = "Sült zöldségek", Price=1200}
         };
 
-        public List<MealFake> GetAll()
+        public List<Meal> GetAll()
         {
             return _items.ToList();
         }
@@ -30,7 +29,7 @@ namespace RoyalDelivery.Repos.MemoryRepo
             
             _items.RemoveAt(selectedId);
         }
-        public void Add(MealFake meal)
+        public void Add(Meal meal)
         {
             _items.Add(meal);
         }

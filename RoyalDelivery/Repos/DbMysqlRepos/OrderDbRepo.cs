@@ -8,6 +8,7 @@ namespace RoyalDelivery.Repos.DbMysqlRepos
     public class OrderDbRepo
     {
         private readonly List<Order> _items;
+        private readonly RoyaldeliveryDbContext _context;
 
         public List<Order> GetAll()
         {

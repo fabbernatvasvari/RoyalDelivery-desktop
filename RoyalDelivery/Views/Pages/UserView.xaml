@@ -26,7 +26,7 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListView">
                                         <Grid>
-                                            <TextBlock Text="Nincs megjeleníthető 🥀🥀🥀🥀."
+                                            <TextBlock Text="Nincs megjeleníthető adat🥀."
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Opacity="0.6"/>

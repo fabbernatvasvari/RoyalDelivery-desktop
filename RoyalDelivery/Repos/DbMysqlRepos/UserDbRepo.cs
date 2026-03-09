@@ -8,7 +8,7 @@ namespace RoyalDelivery.Repos.DbMysqlRepos
     public class UserDbRepo
     {
         private readonly List<User> _items;
-
+        private readonly RoyaldeliveryDbContext _context;
         public List<User> GetAll()
         {
             return _items.ToList();
