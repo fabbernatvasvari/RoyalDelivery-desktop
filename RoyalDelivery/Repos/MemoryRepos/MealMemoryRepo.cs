@@ -1,10 +1,11 @@
 ﻿
 using RoyalDelivery.Models.DbMysqlModels;
+using RoyalDelivery.Repos.Interface;
 using System.Xml.Linq;
 
 namespace RoyalDelivery.Repos.MemoryRepo
 {
-    public class MealMemoryRepo
+    public class MealMemoryRepo : IMealRepo
     {
         private List<Meal> _items = new()
         {

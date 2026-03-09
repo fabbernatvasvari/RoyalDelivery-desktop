@@ -37,9 +37,9 @@ namespace RoyalDelivery
             services.AddScoped<RoyaldeliveryDbContext>();
 
             // Repo
-            services.AddSingleton<MealMemoryRepo>();
-            services.AddSingleton<OrdeMemoryRepo>();
-            services.AddSingleton<IRestaurantRepo,RestaurantDbRepo>();
+            services.AddSingleton<IMealRepo, MealMemoryRepo>();
+            services.AddSingleton<OrderMemoryRepo>();
+            services.AddSingleton<IRestaurantRepo, RestaurantDbRepo>();
             services.AddSingleton<UserMemoryRepo>();
 
             // ViewModels

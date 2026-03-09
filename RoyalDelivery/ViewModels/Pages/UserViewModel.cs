@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using RoyalDelivery.Models.DbMysqlModels;
 using RoyalDelivery.Models.MemoryModels;
 using RoyalDelivery.Repos.MemoryRepo;
 using RoyalDelivery.ViewModels.Base;
@@ -14,23 +15,10 @@ namespace RoyalDelivery.ViewModels.Pages
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(DeleteSelectedCommand))]
-        private UserFake? selectedUser;
+        private User? selectedUser;
 
 
-        /// <summary>
-        /// A szerkesztett adat új adat-e
-        /// </summary>
-        public bool IsNew => EditingUser != null && EditingUser.Id == 0;
-
-        [ObservableProperty]
-        private UserFake? editingUser;
-        partial void OnSelectedUserChanged(UserFake? value)
-        {
-            if (value is not null)
-                EditingUser = value.Clone();
-        }
-
-        public ObservableCollection<UserFake> Users { get; }
+        public ObservableCollection<User> Users { get; }
 
         public UserViewModel()
         {
@@ -40,7 +28,7 @@ namespace RoyalDelivery.ViewModels.Pages
         public UserViewModel(UserMemoryRepo userRepo)
         {
             _repo = userRepo;
-            Users = new ObservableCollection<UserFake>(_repo.GetAll());
+            Users = new ObservableCollection<User>((IEnumerable<User>)_repo.GetAll());
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
