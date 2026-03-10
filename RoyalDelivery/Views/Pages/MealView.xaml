@@ -12,6 +12,17 @@
 
     <Grid>
         <StackPanel Margin="10">
+            <DataGrid ItemsSource="{Binding Meals}"
+          SelectedItem="{Binding SelectedMeal, Mode=TwoWay}"
+          Style="{StaticResource ModernDataGridStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" Width="110"/>
+                    <DataGridTextColumn Header="Név" Binding="{Binding Name}" Width="180"/>
+                    <DataGridTextColumn Header="Leírás" Binding="{Binding Description}" Width="*"/>
+                    <DataGridTextColumn Header="Ár" Binding="{Binding Price, StringFormat={}{0} Ft}" Width="120"/>
+                    <DataGridTextColumn Header="Étterem ID" Binding="{Binding Restaurantid}" Width="140"/>
+                </DataGrid.Columns>
+            </DataGrid>
             <TextBlock Text="Ételek listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
             <ListView ItemsSource="{Binding Meals}" Height="300" SelectedItem="{Binding SelectedMeal, Mode=TwoWay}">
                 <ListView.View>
