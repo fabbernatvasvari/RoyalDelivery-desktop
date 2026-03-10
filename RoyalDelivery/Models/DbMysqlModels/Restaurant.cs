@@ -7,7 +7,7 @@ public partial class Restaurant
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; set; } = null!;
 
-    public int Ownerid { get; set; }
+    public int OwnerId { get; set; }
 }

@@ -46,20 +46,23 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .UseCollation("utf8_general_ci");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnType("int(2)")
+                .HasColumnType("int(9)")
                 .HasColumnName("id");
             entity.Property(e => e.Description)
-                .HasMaxLength(52)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'.'")
                 .HasColumnName("description");
             entity.Property(e => e.Name)
-                .HasMaxLength(20)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'Gipsz Jakab'")
                 .HasColumnName("name");
             entity.Property(e => e.Price)
-                .HasColumnType("int(4)")
+                .HasDefaultValueSql("'1000'")
+                .HasColumnType("int(9)")
                 .HasColumnName("price");
             entity.Property(e => e.Restaurantid)
-                .HasColumnType("int(1)")
+                .HasDefaultValueSql("'1'")
+                .HasColumnType("int(9)")
                 .HasColumnName("restaurantid");
         });
 
@@ -72,19 +75,25 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .HasCharSet("utf8")
                 .UseCollation("utf8_general_ci");
 
+            entity.HasIndex(e => e.RestaurantId, "restaurant_id");
+
+            entity.HasIndex(e => e.UserId, "user_id");
+
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnType("int(2)")
+                .HasColumnType("int(9)")
                 .HasColumnName("id");
             entity.Property(e => e.Date)
-                .HasMaxLength(10)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'2026-05-05'")
                 .HasColumnName("date");
-            entity.Property(e => e.Restaurantid)
-                .HasMaxLength(10)
-                .HasColumnName("restaurantid");
-            entity.Property(e => e.Userid)
-                .HasMaxLength(10)
-                .HasColumnName("userid");
+            entity.Property(e => e.RestaurantId)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("restaurant_id");
+            entity.Property(e => e.UserId)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("user_id");
         });
 
         modelBuilder.Entity<Owner>(entity =>
@@ -96,18 +105,25 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .HasCharSet("utf8")
                 .UseCollation("utf8_general_ci");
 
+            entity.HasIndex(e => e.UserId, "user_id");
+
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
                 .HasColumnType("int(1)")
                 .HasColumnName("id");
             entity.Property(e => e.Email)
-                .HasMaxLength(22)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'gipszjakab@gmail.com'")
                 .HasColumnName("email");
             entity.Property(e => e.Password)
-                .HasMaxLength(15)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'jelszo123'")
                 .HasColumnName("password");
+            entity.Property(e => e.UserId)
+                .HasColumnType("int(9)")
+                .HasColumnName("user_id");
             entity.Property(e => e.Username)
-                .HasMaxLength(16)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'gipszjakab'")
                 .HasColumnName("username");
         });
 
@@ -121,15 +137,16 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .UseCollation("utf8_general_ci");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnType("int(2)")
+                .HasColumnType("int(9)")
                 .HasColumnName("id");
             entity.Property(e => e.Name)
-                .HasMaxLength(15)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'.'")
                 .HasColumnName("name");
-            entity.Property(e => e.Ownerid)
-                .HasColumnType("int(1)")
-                .HasColumnName("ownerid");
+            entity.Property(e => e.OwnerId)
+                .HasDefaultValueSql("'1'")
+                .HasColumnType("int(9)")
+                .HasColumnName("owner_id");
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -142,26 +159,31 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .UseCollation("utf8_general_ci");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnType("int(2)")
+                .HasColumnType("int(9)")
                 .HasColumnName("id");
             entity.Property(e => e.Address)
-                .HasMaxLength(32)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'.'")
                 .HasColumnName("address");
             entity.Property(e => e.Email)
-                .HasMaxLength(30)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'gipszjakab@gmail.com'")
                 .HasColumnName("email");
             entity.Property(e => e.FirstName)
-                .HasMaxLength(9)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'Jakab'")
                 .HasColumnName("firstName");
             entity.Property(e => e.LastName)
-                .HasMaxLength(7)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'Gipsz'")
                 .HasColumnName("lastName");
             entity.Property(e => e.Password)
-                .HasMaxLength(15)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'jelszo123'")
                 .HasColumnName("password");
             entity.Property(e => e.Username)
-                .HasMaxLength(11)
+                .HasMaxLength(100)
+                .HasDefaultValueSql("'gipszjakab'")
                 .HasColumnName("username");
         });
 
