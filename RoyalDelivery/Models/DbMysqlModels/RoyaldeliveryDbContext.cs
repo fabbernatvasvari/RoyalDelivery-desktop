@@ -60,10 +60,10 @@ public partial class RoyaldeliveryDbContext : DbContext
                 .HasDefaultValueSql("'1000'")
                 .HasColumnType("int(9)")
                 .HasColumnName("price");
-            entity.Property(e => e.Restaurantid)
+            entity.Property(e => e.RestaurantId)
                 .HasDefaultValueSql("'1'")
                 .HasColumnType("int(9)")
-                .HasColumnName("restaurantid");
+                .HasColumnName("RestaurantId");
         });
 
         modelBuilder.Entity<Order>(entity =>

@@ -20,7 +20,7 @@
                     <DataGridTextColumn Header="Név" Binding="{Binding Name}" Width="180"/>
                     <DataGridTextColumn Header="Leírás" Binding="{Binding Description}" Width="*"/>
                     <DataGridTextColumn Header="Ár" Binding="{Binding Price, StringFormat={}{0} Ft}" Width="120"/>
-                    <DataGridTextColumn Header="Étterem ID" Binding="{Binding Restaurantid}" Width="140"/>
+                    <DataGridTextColumn Header="Étterem ID" Binding="{Binding RestaurantId}" Width="140"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="Ételek listája" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
@@ -31,7 +31,7 @@
                         <GridViewColumn Header="Név" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Leírás" DisplayMemberBinding="{Binding Description}" />
                         <GridViewColumn Header="Ár" DisplayMemberBinding="{Binding Price}" />
-                        <GridViewColumn Header="Étterem ID" DisplayMemberBinding="{Binding Restaurantid}" />
+                        <GridViewColumn Header="Étterem ID" DisplayMemberBinding="{Binding RestaurantId}" />
                     </GridView>
                 </ListView.View>
                 <ListView.Style>

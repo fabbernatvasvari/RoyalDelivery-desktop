@@ -16,12 +16,12 @@ namespace RoyalDelivery.Repos.MemoryRepo
         /// </summary>
         private readonly List<Order> _items =
         [
-            new Order {Id= 0, Restaurantid = "Pizza", Userid = "1" },
-            new Order {Id= 1,  Restaurantid = "Gyros", Userid = "1" },
-            new Order {Id= 2,  Restaurantid = "Hamburger", Userid = "1" },
-            new Order {Id= 3,  Restaurantid = "Sült csirke", Userid = "1" },
-            new Order {Id= 4,  Restaurantid = "Sült krumpli", Userid = "1" },
-            new Order {Id= 5,  Restaurantid = "Kóla", Userid = "1" }
+            new Order {Id= 0, RestaurantId = "Pizza", UserId = "1" },
+            new Order {Id= 1,  RestaurantId = "Gyros", UserId = "1" },
+            new Order {Id= 2,  RestaurantId = "Hamburger", UserId = "1" },
+            new Order {Id= 3,  RestaurantId = "Sült csirke", UserId = "1" },
+            new Order {Id= 4,  RestaurantId = "Sült krumpli", UserId = "1" },
+            new Order {Id= 5,  RestaurantId = "Kóla", UserId = "1" }
         ];
 
         /// <summary>

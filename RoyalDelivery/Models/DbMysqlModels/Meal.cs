@@ -13,5 +13,5 @@ public partial class Meal
 
     public int Price { get; set; }
 
-    public int Restaurantid { get; set; }
+    public int RestaurantId { get; set; }
 }
