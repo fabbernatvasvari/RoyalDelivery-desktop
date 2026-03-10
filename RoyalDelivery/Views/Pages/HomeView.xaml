@@ -7,6 +7,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="Ez a főoldal. 🏘🏚🏠🏡"  />
+        <Border Style="{StaticResource PageCardStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock Text="Üdv a Royal Delivery admin felületén 👑"
+                           Style="{StaticResource PageTitleStyle}"/>
+                <TextBlock Text="Itt kezelheted az éttermeket, ételeket, rendeléseket és felhasználókat."
+                           Style="{StaticResource PageSubtitleStyle}"/>
+
+                <WrapPanel Margin="0,20,0,0">
+                    <Border Background="#EEF2FF" CornerRadius="12" Padding="16" Margin="0,0,12,12">
+                        <StackPanel>
+                            <TextBlock Text="🍽 Éttermek" FontWeight="SemiBold"/>
+                            <TextBlock Text="Kezeld az étterem adatokat" Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#ECFDF5" CornerRadius="12" Padding="16" Margin="0,0,12,12">
+                        <StackPanel>
+                            <TextBlock Text="🍔 Ételek" FontWeight="SemiBold"/>
+                            <TextBlock Text="Tekintsd át a kínálatot" Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#FFF7ED" CornerRadius="12" Padding="16" Margin="0,0,12,12">
+                        <StackPanel>
+                            <TextBlock Text="📦 Rendelések" FontWeight="SemiBold"/>
+                            <TextBlock Text="Kövesd a megrendeléseket" Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#FDF2F8" CornerRadius="12" Padding="16" Margin="0,0,12,12">
+                        <StackPanel>
+                            <TextBlock Text="👤 Felhasználók" FontWeight="SemiBold"/>
+                            <TextBlock Text="Felhasználói adatok kezelése" Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>
